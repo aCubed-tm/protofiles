@@ -1,1 +1,2 @@
-What's up, world!
+## Compiling
+`protoc -I . *.proto --go_out=plugins=grpc:.`
