@@ -2,13 +2,20 @@ syntax = "proto3";
 
 package proto;
 
-service LoginService {
+service AuthService {
     rpc IsEmailRegistered (IsEmailRegisteredRequest) returns (IsEmailRegisteredReply) {}
+    rpc Register (RegisterRequest) returns (RegisterReply) {}
     rpc Login (LoginRequest) returns (LoginReply) {}
 }
 
 message IsEmailRegisteredRequest {
     string email = 1;
+}
+
+message RegisterRequest {
+    string email = 1;
+    string password = 2;
+    string verificationToken = 3;
 }
 
 message LoginRequest {
@@ -18,6 +25,10 @@ message LoginRequest {
 
 message IsEmailRegisteredReply {
     bool isRegistered = 1;
+}
+
+message RegisterReply {
+    bool success = 1;
 }
 
 message LoginReply {

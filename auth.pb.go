@@ -63,6 +63,61 @@ func (m *IsEmailRegisteredRequest) GetEmail() string {
 	return ""
 }
 
+type RegisterRequest struct {
+	Email                string   `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
+	Password             string   `protobuf:"bytes,2,opt,name=password,proto3" json:"password,omitempty"`
+	VerificationToken    string   `protobuf:"bytes,3,opt,name=verificationToken,proto3" json:"verificationToken,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RegisterRequest) Reset()         { *m = RegisterRequest{} }
+func (m *RegisterRequest) String() string { return proto.CompactTextString(m) }
+func (*RegisterRequest) ProtoMessage()    {}
+func (*RegisterRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_8bbd6f3875b0e874, []int{1}
+}
+
+func (m *RegisterRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RegisterRequest.Unmarshal(m, b)
+}
+func (m *RegisterRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RegisterRequest.Marshal(b, m, deterministic)
+}
+func (m *RegisterRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RegisterRequest.Merge(m, src)
+}
+func (m *RegisterRequest) XXX_Size() int {
+	return xxx_messageInfo_RegisterRequest.Size(m)
+}
+func (m *RegisterRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_RegisterRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RegisterRequest proto.InternalMessageInfo
+
+func (m *RegisterRequest) GetEmail() string {
+	if m != nil {
+		return m.Email
+	}
+	return ""
+}
+
+func (m *RegisterRequest) GetPassword() string {
+	if m != nil {
+		return m.Password
+	}
+	return ""
+}
+
+func (m *RegisterRequest) GetVerificationToken() string {
+	if m != nil {
+		return m.VerificationToken
+	}
+	return ""
+}
+
 type LoginRequest struct {
 	Email                string   `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
 	Password             string   `protobuf:"bytes,2,opt,name=password,proto3" json:"password,omitempty"`
@@ -75,7 +130,7 @@ func (m *LoginRequest) Reset()         { *m = LoginRequest{} }
 func (m *LoginRequest) String() string { return proto.CompactTextString(m) }
 func (*LoginRequest) ProtoMessage()    {}
 func (*LoginRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_8bbd6f3875b0e874, []int{1}
+	return fileDescriptor_8bbd6f3875b0e874, []int{2}
 }
 
 func (m *LoginRequest) XXX_Unmarshal(b []byte) error {
@@ -121,7 +176,7 @@ func (m *IsEmailRegisteredReply) Reset()         { *m = IsEmailRegisteredReply{}
 func (m *IsEmailRegisteredReply) String() string { return proto.CompactTextString(m) }
 func (*IsEmailRegisteredReply) ProtoMessage()    {}
 func (*IsEmailRegisteredReply) Descriptor() ([]byte, []int) {
-	return fileDescriptor_8bbd6f3875b0e874, []int{2}
+	return fileDescriptor_8bbd6f3875b0e874, []int{3}
 }
 
 func (m *IsEmailRegisteredReply) XXX_Unmarshal(b []byte) error {
@@ -149,6 +204,45 @@ func (m *IsEmailRegisteredReply) GetIsRegistered() bool {
 	return false
 }
 
+type RegisterReply struct {
+	Success              bool     `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RegisterReply) Reset()         { *m = RegisterReply{} }
+func (m *RegisterReply) String() string { return proto.CompactTextString(m) }
+func (*RegisterReply) ProtoMessage()    {}
+func (*RegisterReply) Descriptor() ([]byte, []int) {
+	return fileDescriptor_8bbd6f3875b0e874, []int{4}
+}
+
+func (m *RegisterReply) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RegisterReply.Unmarshal(m, b)
+}
+func (m *RegisterReply) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RegisterReply.Marshal(b, m, deterministic)
+}
+func (m *RegisterReply) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RegisterReply.Merge(m, src)
+}
+func (m *RegisterReply) XXX_Size() int {
+	return xxx_messageInfo_RegisterReply.Size(m)
+}
+func (m *RegisterReply) XXX_DiscardUnknown() {
+	xxx_messageInfo_RegisterReply.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RegisterReply proto.InternalMessageInfo
+
+func (m *RegisterReply) GetSuccess() bool {
+	if m != nil {
+		return m.Success
+	}
+	return false
+}
+
 type LoginReply struct {
 	Success              bool     `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -160,7 +254,7 @@ func (m *LoginReply) Reset()         { *m = LoginReply{} }
 func (m *LoginReply) String() string { return proto.CompactTextString(m) }
 func (*LoginReply) ProtoMessage()    {}
 func (*LoginReply) Descriptor() ([]byte, []int) {
-	return fileDescriptor_8bbd6f3875b0e874, []int{3}
+	return fileDescriptor_8bbd6f3875b0e874, []int{5}
 }
 
 func (m *LoginReply) XXX_Unmarshal(b []byte) error {
@@ -190,29 +284,35 @@ func (m *LoginReply) GetSuccess() bool {
 
 func init() {
 	proto.RegisterType((*IsEmailRegisteredRequest)(nil), "proto.IsEmailRegisteredRequest")
+	proto.RegisterType((*RegisterRequest)(nil), "proto.RegisterRequest")
 	proto.RegisterType((*LoginRequest)(nil), "proto.LoginRequest")
 	proto.RegisterType((*IsEmailRegisteredReply)(nil), "proto.IsEmailRegisteredReply")
+	proto.RegisterType((*RegisterReply)(nil), "proto.RegisterReply")
 	proto.RegisterType((*LoginReply)(nil), "proto.LoginReply")
 }
 
 func init() { proto.RegisterFile("auth.proto", fileDescriptor_8bbd6f3875b0e874) }
 
 var fileDescriptor_8bbd6f3875b0e874 = []byte{
-	// 217 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xe2, 0x4a, 0x2c, 0x2d, 0xc9,
-	0xd0, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x05, 0x53, 0x4a, 0x06, 0x5c, 0x12, 0x9e, 0xc5,
-	0xae, 0xb9, 0x89, 0x99, 0x39, 0x41, 0xa9, 0xe9, 0x99, 0xc5, 0x25, 0xa9, 0x45, 0xa9, 0x29, 0x41,
-	0xa9, 0x85, 0xa5, 0xa9, 0xc5, 0x25, 0x42, 0x22, 0x5c, 0xac, 0xa9, 0x20, 0x19, 0x09, 0x46, 0x05,
-	0x46, 0x0d, 0xce, 0x20, 0x08, 0x47, 0xc9, 0x81, 0x8b, 0xc7, 0x27, 0x3f, 0x3d, 0x33, 0x0f, 0xaf,
-	0x2a, 0x21, 0x29, 0x2e, 0x8e, 0x82, 0xc4, 0xe2, 0xe2, 0xf2, 0xfc, 0xa2, 0x14, 0x09, 0x26, 0xb0,
-	0x04, 0x9c, 0xaf, 0x64, 0xc3, 0x25, 0x86, 0xc5, 0xce, 0x82, 0x9c, 0x4a, 0x21, 0x25, 0x2e, 0x9e,
-	0xcc, 0x62, 0x84, 0x20, 0xd8, 0x48, 0x8e, 0x20, 0x14, 0x31, 0x25, 0x35, 0x2e, 0x2e, 0xa8, 0xfd,
-	0x20, 0x1d, 0x12, 0x5c, 0xec, 0xc5, 0xa5, 0xc9, 0xc9, 0xa9, 0xc5, 0xc5, 0x50, 0xc5, 0x30, 0xae,
-	0xd1, 0x0c, 0x46, 0xa8, 0x43, 0x83, 0x53, 0x8b, 0xca, 0x32, 0x93, 0x53, 0x85, 0x42, 0xb9, 0x04,
-	0x31, 0xac, 0x15, 0x92, 0x87, 0x04, 0x87, 0x1e, 0xae, 0x40, 0x90, 0x92, 0xc5, 0xad, 0xa0, 0x20,
-	0xa7, 0x52, 0x89, 0x41, 0xc8, 0x90, 0x8b, 0x15, 0x6c, 0x8d, 0x90, 0x30, 0x54, 0x25, 0x72, 0xe8,
-	0x48, 0x09, 0xa2, 0x0a, 0x82, 0xb5, 0x24, 0xb1, 0x81, 0xc5, 0x8c, 0x01, 0x01, 0x00, 0x00, 0xff,
-	0xff, 0x4e, 0x62, 0xc2, 0x49, 0x90, 0x01, 0x00, 0x00,
+	// 282 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x91, 0x4f, 0x4b, 0xf3, 0x40,
+	0x10, 0x87, 0xdf, 0xbc, 0x12, 0x8d, 0x63, 0x45, 0x32, 0x96, 0xb2, 0x04, 0x44, 0xd9, 0x83, 0x28,
+	0x48, 0xf1, 0xcf, 0x4d, 0x3c, 0xe8, 0xc1, 0x83, 0xe0, 0x29, 0xea, 0x07, 0x88, 0xe9, 0xd8, 0x2e,
+	0xc6, 0x6c, 0xba, 0xb3, 0xa9, 0xf4, 0x73, 0xfa, 0x85, 0xa4, 0x9b, 0xc4, 0x5a, 0x63, 0x7b, 0xf0,
+	0x14, 0xe6, 0x99, 0x67, 0xb2, 0x33, 0xfc, 0x00, 0x92, 0xd2, 0x8e, 0xfa, 0x85, 0xd1, 0x56, 0xa3,
+	0xef, 0x3e, 0xf2, 0x14, 0xc4, 0x1d, 0xdf, 0xbe, 0x25, 0x2a, 0x8b, 0x69, 0xa8, 0xd8, 0x92, 0xa1,
+	0x41, 0x4c, 0xe3, 0x92, 0xd8, 0x62, 0x17, 0x7c, 0x9a, 0x75, 0x84, 0x77, 0xe0, 0x1d, 0x6d, 0xc6,
+	0x55, 0x21, 0xc7, 0xb0, 0xd3, 0xa8, 0x2b, 0x45, 0x8c, 0x20, 0x28, 0x12, 0xe6, 0x77, 0x6d, 0x06,
+	0xe2, 0xbf, 0x6b, 0x7c, 0xd5, 0x78, 0x02, 0xe1, 0x84, 0x8c, 0x7a, 0x51, 0x69, 0x62, 0x95, 0xce,
+	0x1f, 0xf5, 0x2b, 0xe5, 0x62, 0xcd, 0x49, 0xed, 0x86, 0xbc, 0x86, 0xce, 0xbd, 0x1e, 0xaa, 0xfc,
+	0xcf, 0xef, 0xc9, 0x2b, 0xe8, 0xfd, 0x72, 0x66, 0x91, 0x4d, 0x51, 0x42, 0x47, 0xf1, 0x1c, 0xba,
+	0x5f, 0x06, 0xf1, 0x02, 0x93, 0xc7, 0xb0, 0x3d, 0x3f, 0x79, 0x36, 0x24, 0x60, 0x83, 0xcb, 0x34,
+	0x25, 0xe6, 0xda, 0x6f, 0x4a, 0x79, 0x08, 0x50, 0xaf, 0xba, 0xd2, 0x3b, 0xff, 0xf0, 0x60, 0xeb,
+	0xa6, 0xb4, 0xa3, 0x07, 0x32, 0x13, 0x95, 0x12, 0x3e, 0x41, 0xd8, 0x5a, 0x10, 0xf7, 0xab, 0xac,
+	0xfa, 0xcb, 0x12, 0x8a, 0xf6, 0x96, 0x0b, 0x45, 0x36, 0x95, 0xff, 0xf0, 0x12, 0x82, 0x06, 0x62,
+	0xaf, 0x96, 0x7f, 0xa4, 0x17, 0x75, 0x5b, 0xbc, 0x9a, 0x3d, 0x03, 0xdf, 0x9d, 0x82, 0xbb, 0xb5,
+	0xf0, 0x3d, 0x83, 0x28, 0x5c, 0x84, 0x6e, 0xe4, 0x79, 0xdd, 0xb1, 0x8b, 0xcf, 0x00, 0x00, 0x00,
+	0xff, 0xff, 0xb9, 0xd2, 0xda, 0x0f, 0x69, 0x02, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -223,108 +323,144 @@ var _ grpc.ClientConn
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion4
 
-// LoginServiceClient is the client API for LoginService service.
+// AuthServiceClient is the client API for AuthService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type LoginServiceClient interface {
+type AuthServiceClient interface {
 	IsEmailRegistered(ctx context.Context, in *IsEmailRegisteredRequest, opts ...grpc.CallOption) (*IsEmailRegisteredReply, error)
+	Register(ctx context.Context, in *RegisterRequest, opts ...grpc.CallOption) (*RegisterReply, error)
 	Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginReply, error)
 }
 
-type loginServiceClient struct {
+type authServiceClient struct {
 	cc *grpc.ClientConn
 }
 
-func NewLoginServiceClient(cc *grpc.ClientConn) LoginServiceClient {
-	return &loginServiceClient{cc}
+func NewAuthServiceClient(cc *grpc.ClientConn) AuthServiceClient {
+	return &authServiceClient{cc}
 }
 
-func (c *loginServiceClient) IsEmailRegistered(ctx context.Context, in *IsEmailRegisteredRequest, opts ...grpc.CallOption) (*IsEmailRegisteredReply, error) {
+func (c *authServiceClient) IsEmailRegistered(ctx context.Context, in *IsEmailRegisteredRequest, opts ...grpc.CallOption) (*IsEmailRegisteredReply, error) {
 	out := new(IsEmailRegisteredReply)
-	err := c.cc.Invoke(ctx, "/proto.LoginService/IsEmailRegistered", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/proto.AuthService/IsEmailRegistered", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *loginServiceClient) Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginReply, error) {
+func (c *authServiceClient) Register(ctx context.Context, in *RegisterRequest, opts ...grpc.CallOption) (*RegisterReply, error) {
+	out := new(RegisterReply)
+	err := c.cc.Invoke(ctx, "/proto.AuthService/Register", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authServiceClient) Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginReply, error) {
 	out := new(LoginReply)
-	err := c.cc.Invoke(ctx, "/proto.LoginService/Login", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/proto.AuthService/Login", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// LoginServiceServer is the server API for LoginService service.
-type LoginServiceServer interface {
+// AuthServiceServer is the server API for AuthService service.
+type AuthServiceServer interface {
 	IsEmailRegistered(context.Context, *IsEmailRegisteredRequest) (*IsEmailRegisteredReply, error)
+	Register(context.Context, *RegisterRequest) (*RegisterReply, error)
 	Login(context.Context, *LoginRequest) (*LoginReply, error)
 }
 
-// UnimplementedLoginServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedLoginServiceServer struct {
+// UnimplementedAuthServiceServer can be embedded to have forward compatible implementations.
+type UnimplementedAuthServiceServer struct {
 }
 
-func (*UnimplementedLoginServiceServer) IsEmailRegistered(ctx context.Context, req *IsEmailRegisteredRequest) (*IsEmailRegisteredReply, error) {
+func (*UnimplementedAuthServiceServer) IsEmailRegistered(ctx context.Context, req *IsEmailRegisteredRequest) (*IsEmailRegisteredReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method IsEmailRegistered not implemented")
 }
-func (*UnimplementedLoginServiceServer) Login(ctx context.Context, req *LoginRequest) (*LoginReply, error) {
+func (*UnimplementedAuthServiceServer) Register(ctx context.Context, req *RegisterRequest) (*RegisterReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Register not implemented")
+}
+func (*UnimplementedAuthServiceServer) Login(ctx context.Context, req *LoginRequest) (*LoginReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Login not implemented")
 }
 
-func RegisterLoginServiceServer(s *grpc.Server, srv LoginServiceServer) {
-	s.RegisterService(&_LoginService_serviceDesc, srv)
+func RegisterAuthServiceServer(s *grpc.Server, srv AuthServiceServer) {
+	s.RegisterService(&_AuthService_serviceDesc, srv)
 }
 
-func _LoginService_IsEmailRegistered_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AuthService_IsEmailRegistered_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(IsEmailRegisteredRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LoginServiceServer).IsEmailRegistered(ctx, in)
+		return srv.(AuthServiceServer).IsEmailRegistered(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/proto.LoginService/IsEmailRegistered",
+		FullMethod: "/proto.AuthService/IsEmailRegistered",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LoginServiceServer).IsEmailRegistered(ctx, req.(*IsEmailRegisteredRequest))
+		return srv.(AuthServiceServer).IsEmailRegistered(ctx, req.(*IsEmailRegisteredRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LoginService_Login_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AuthService_Register_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RegisterRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthServiceServer).Register(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.AuthService/Register",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthServiceServer).Register(ctx, req.(*RegisterRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AuthService_Login_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(LoginRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LoginServiceServer).Login(ctx, in)
+		return srv.(AuthServiceServer).Login(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/proto.LoginService/Login",
+		FullMethod: "/proto.AuthService/Login",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LoginServiceServer).Login(ctx, req.(*LoginRequest))
+		return srv.(AuthServiceServer).Login(ctx, req.(*LoginRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _LoginService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "proto.LoginService",
-	HandlerType: (*LoginServiceServer)(nil),
+var _AuthService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "proto.AuthService",
+	HandlerType: (*AuthServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "IsEmailRegistered",
-			Handler:    _LoginService_IsEmailRegistered_Handler,
+			Handler:    _AuthService_IsEmailRegistered_Handler,
+		},
+		{
+			MethodName: "Register",
+			Handler:    _AuthService_Register_Handler,
 		},
 		{
 			MethodName: "Login",
-			Handler:    _LoginService_Login_Handler,
+			Handler:    _AuthService_Login_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
