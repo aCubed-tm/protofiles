@@ -32,5 +32,5 @@ message RegisterReply {
 }
 
 message LoginReply {
-    bool success = 1;
+    string token = 2;
 }
