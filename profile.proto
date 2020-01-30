@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package proto;
+
+service ProfileService {
+    rpc UpdateProfile (UpdateProfileRequest) returns (UpdateProfileReply) {}
+}
+
+message UpdateProfileRequest {
+    string uuid = 1;
+    string firstName = 2;
+    string lastName = 3;
+}
+
+message UpdateProfileReply {
+    bool success = 1;
+}
