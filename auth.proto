@@ -20,7 +20,6 @@ message GetInvitesRequest {
 message RegisterRequest {
     string email = 1;
     string password = 2;
-    string verificationToken = 3;
 }
 
 message LoginRequest {
@@ -38,7 +37,6 @@ message GetInvitesReply {
 }
 
 message RegisterReply {
-    bool success = 1;
 }
 
 message LoginReply {
