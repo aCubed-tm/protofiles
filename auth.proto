@@ -4,12 +4,17 @@ package proto;
 
 service AuthService {
     rpc IsEmailRegistered (IsEmailRegisteredRequest) returns (IsEmailRegisteredReply) {}
+    rpc GetInvites (GetInvitesRequest) returns (GetInvitesReply) {}
     rpc Register (RegisterRequest) returns (RegisterReply) {}
     rpc Login (LoginRequest) returns (LoginReply) {}
 }
 
 message IsEmailRegisteredRequest {
     string email = 1;
+}
+
+message GetInvitesRequest {
+    string accountUuid = 1;
 }
 
 message RegisterRequest {
@@ -25,6 +30,11 @@ message LoginRequest {
 
 message IsEmailRegisteredReply {
     bool isRegistered = 1;
+    string accountUuid = 2;
+}
+
+message GetInvitesReply {
+    repeated string inviteUuids = 1;
 }
 
 message RegisterReply {

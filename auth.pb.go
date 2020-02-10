@@ -63,6 +63,45 @@ func (m *IsEmailRegisteredRequest) GetEmail() string {
 	return ""
 }
 
+type GetInvitesRequest struct {
+	AccountUuid          string   `protobuf:"bytes,1,opt,name=accountUuid,proto3" json:"accountUuid,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetInvitesRequest) Reset()         { *m = GetInvitesRequest{} }
+func (m *GetInvitesRequest) String() string { return proto.CompactTextString(m) }
+func (*GetInvitesRequest) ProtoMessage()    {}
+func (*GetInvitesRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_8bbd6f3875b0e874, []int{1}
+}
+
+func (m *GetInvitesRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetInvitesRequest.Unmarshal(m, b)
+}
+func (m *GetInvitesRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetInvitesRequest.Marshal(b, m, deterministic)
+}
+func (m *GetInvitesRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetInvitesRequest.Merge(m, src)
+}
+func (m *GetInvitesRequest) XXX_Size() int {
+	return xxx_messageInfo_GetInvitesRequest.Size(m)
+}
+func (m *GetInvitesRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetInvitesRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetInvitesRequest proto.InternalMessageInfo
+
+func (m *GetInvitesRequest) GetAccountUuid() string {
+	if m != nil {
+		return m.AccountUuid
+	}
+	return ""
+}
+
 type RegisterRequest struct {
 	Email                string   `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
 	Password             string   `protobuf:"bytes,2,opt,name=password,proto3" json:"password,omitempty"`
@@ -76,7 +115,7 @@ func (m *RegisterRequest) Reset()         { *m = RegisterRequest{} }
 func (m *RegisterRequest) String() string { return proto.CompactTextString(m) }
 func (*RegisterRequest) ProtoMessage()    {}
 func (*RegisterRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_8bbd6f3875b0e874, []int{1}
+	return fileDescriptor_8bbd6f3875b0e874, []int{2}
 }
 
 func (m *RegisterRequest) XXX_Unmarshal(b []byte) error {
@@ -130,7 +169,7 @@ func (m *LoginRequest) Reset()         { *m = LoginRequest{} }
 func (m *LoginRequest) String() string { return proto.CompactTextString(m) }
 func (*LoginRequest) ProtoMessage()    {}
 func (*LoginRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_8bbd6f3875b0e874, []int{2}
+	return fileDescriptor_8bbd6f3875b0e874, []int{3}
 }
 
 func (m *LoginRequest) XXX_Unmarshal(b []byte) error {
@@ -167,6 +206,7 @@ func (m *LoginRequest) GetPassword() string {
 
 type IsEmailRegisteredReply struct {
 	IsRegistered         bool     `protobuf:"varint,1,opt,name=isRegistered,proto3" json:"isRegistered,omitempty"`
+	AccountUuid          string   `protobuf:"bytes,2,opt,name=accountUuid,proto3" json:"accountUuid,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -176,7 +216,7 @@ func (m *IsEmailRegisteredReply) Reset()         { *m = IsEmailRegisteredReply{}
 func (m *IsEmailRegisteredReply) String() string { return proto.CompactTextString(m) }
 func (*IsEmailRegisteredReply) ProtoMessage()    {}
 func (*IsEmailRegisteredReply) Descriptor() ([]byte, []int) {
-	return fileDescriptor_8bbd6f3875b0e874, []int{3}
+	return fileDescriptor_8bbd6f3875b0e874, []int{4}
 }
 
 func (m *IsEmailRegisteredReply) XXX_Unmarshal(b []byte) error {
@@ -204,6 +244,52 @@ func (m *IsEmailRegisteredReply) GetIsRegistered() bool {
 	return false
 }
 
+func (m *IsEmailRegisteredReply) GetAccountUuid() string {
+	if m != nil {
+		return m.AccountUuid
+	}
+	return ""
+}
+
+type GetInvitesReply struct {
+	InviteUuids          []string `protobuf:"bytes,1,rep,name=inviteUuids,proto3" json:"inviteUuids,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetInvitesReply) Reset()         { *m = GetInvitesReply{} }
+func (m *GetInvitesReply) String() string { return proto.CompactTextString(m) }
+func (*GetInvitesReply) ProtoMessage()    {}
+func (*GetInvitesReply) Descriptor() ([]byte, []int) {
+	return fileDescriptor_8bbd6f3875b0e874, []int{5}
+}
+
+func (m *GetInvitesReply) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetInvitesReply.Unmarshal(m, b)
+}
+func (m *GetInvitesReply) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetInvitesReply.Marshal(b, m, deterministic)
+}
+func (m *GetInvitesReply) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetInvitesReply.Merge(m, src)
+}
+func (m *GetInvitesReply) XXX_Size() int {
+	return xxx_messageInfo_GetInvitesReply.Size(m)
+}
+func (m *GetInvitesReply) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetInvitesReply.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetInvitesReply proto.InternalMessageInfo
+
+func (m *GetInvitesReply) GetInviteUuids() []string {
+	if m != nil {
+		return m.InviteUuids
+	}
+	return nil
+}
+
 type RegisterReply struct {
 	Success              bool     `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -215,7 +301,7 @@ func (m *RegisterReply) Reset()         { *m = RegisterReply{} }
 func (m *RegisterReply) String() string { return proto.CompactTextString(m) }
 func (*RegisterReply) ProtoMessage()    {}
 func (*RegisterReply) Descriptor() ([]byte, []int) {
-	return fileDescriptor_8bbd6f3875b0e874, []int{4}
+	return fileDescriptor_8bbd6f3875b0e874, []int{6}
 }
 
 func (m *RegisterReply) XXX_Unmarshal(b []byte) error {
@@ -254,7 +340,7 @@ func (m *LoginReply) Reset()         { *m = LoginReply{} }
 func (m *LoginReply) String() string { return proto.CompactTextString(m) }
 func (*LoginReply) ProtoMessage()    {}
 func (*LoginReply) Descriptor() ([]byte, []int) {
-	return fileDescriptor_8bbd6f3875b0e874, []int{5}
+	return fileDescriptor_8bbd6f3875b0e874, []int{7}
 }
 
 func (m *LoginReply) XXX_Unmarshal(b []byte) error {
@@ -284,9 +370,11 @@ func (m *LoginReply) GetToken() string {
 
 func init() {
 	proto.RegisterType((*IsEmailRegisteredRequest)(nil), "proto.IsEmailRegisteredRequest")
+	proto.RegisterType((*GetInvitesRequest)(nil), "proto.GetInvitesRequest")
 	proto.RegisterType((*RegisterRequest)(nil), "proto.RegisterRequest")
 	proto.RegisterType((*LoginRequest)(nil), "proto.LoginRequest")
 	proto.RegisterType((*IsEmailRegisteredReply)(nil), "proto.IsEmailRegisteredReply")
+	proto.RegisterType((*GetInvitesReply)(nil), "proto.GetInvitesReply")
 	proto.RegisterType((*RegisterReply)(nil), "proto.RegisterReply")
 	proto.RegisterType((*LoginReply)(nil), "proto.LoginReply")
 }
@@ -294,25 +382,30 @@ func init() {
 func init() { proto.RegisterFile("auth.proto", fileDescriptor_8bbd6f3875b0e874) }
 
 var fileDescriptor_8bbd6f3875b0e874 = []byte{
-	// 288 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x91, 0xcf, 0x4a, 0xc3, 0x40,
-	0x10, 0xc6, 0x8d, 0x12, 0x8d, 0x63, 0x45, 0x32, 0x86, 0xb2, 0x04, 0x44, 0xd9, 0x93, 0x82, 0x14,
-	0xff, 0xdc, 0xc4, 0x83, 0x1e, 0x3c, 0x08, 0x9e, 0xa2, 0x3e, 0x40, 0x4c, 0xc7, 0x76, 0x31, 0x66,
-	0xd3, 0xdd, 0x4d, 0xa5, 0xcf, 0xe9, 0x0b, 0x49, 0x76, 0x13, 0x6b, 0x8d, 0xf5, 0xd0, 0xd3, 0xf2,
-	0x7d, 0xf3, 0x9b, 0xdd, 0xf9, 0x76, 0x00, 0xd2, 0xca, 0x8c, 0x07, 0xa5, 0x92, 0x46, 0xa2, 0x6f,
-	0x0f, 0x7e, 0x06, 0xec, 0x5e, 0xdf, 0xbd, 0xa7, 0x22, 0x4f, 0x68, 0x24, 0xb4, 0x21, 0x45, 0xc3,
-	0x84, 0x26, 0x15, 0x69, 0x83, 0x11, 0xf8, 0x54, 0x57, 0x98, 0x77, 0xe4, 0x1d, 0x6f, 0x27, 0x4e,
-	0xf0, 0x09, 0xec, 0xb5, 0xe8, 0xbf, 0x20, 0xc6, 0x10, 0x94, 0xa9, 0xd6, 0x1f, 0x52, 0x0d, 0xd9,
-	0xba, 0x2d, 0x7c, 0x6b, 0x3c, 0x85, 0x70, 0x4a, 0x4a, 0xbc, 0x8a, 0x2c, 0x35, 0x42, 0x16, 0x4f,
-	0xf2, 0x8d, 0x0a, 0xb6, 0x61, 0xa1, 0x6e, 0x81, 0xdf, 0x40, 0xef, 0x41, 0x8e, 0x44, 0xb1, 0xf2,
-	0x7b, 0xfc, 0x1a, 0xfa, 0x7f, 0xc4, 0x2c, 0xf3, 0x19, 0x72, 0xe8, 0x09, 0x3d, 0x37, 0xed, 0x95,
-	0x41, 0xb2, 0xe0, 0xf1, 0x13, 0xd8, 0x9d, 0x47, 0xae, 0x9b, 0x18, 0x6c, 0xe9, 0x2a, 0xcb, 0x48,
-	0xeb, 0x86, 0x6f, 0x25, 0xe7, 0x00, 0xcd, 0xa8, 0x35, 0x17, 0x81, 0x6f, 0x6c, 0x34, 0x37, 0x8f,
-	0x13, 0x17, 0x9f, 0x1e, 0xec, 0xdc, 0x56, 0x66, 0xfc, 0x48, 0x6a, 0x2a, 0x32, 0xc2, 0x67, 0x08,
-	0x3b, 0xc3, 0xe1, 0xa1, 0xdb, 0xd3, 0x60, 0xd9, 0x76, 0xe2, 0x83, 0xe5, 0x40, 0x99, 0xcf, 0xf8,
-	0x1a, 0x5e, 0x41, 0xd0, 0x9a, 0xd8, 0x6f, 0xe0, 0x5f, 0x9b, 0x8b, 0xa3, 0x8e, 0xef, 0x7a, 0xcf,
-	0xc1, 0xb7, 0x31, 0x70, 0xbf, 0x01, 0x7e, 0xfe, 0x7f, 0x1c, 0x2e, 0x9a, 0xb6, 0xe5, 0x65, 0xd3,
-	0x7a, 0x97, 0x5f, 0x01, 0x00, 0x00, 0xff, 0xff, 0x69, 0x7e, 0x6d, 0x1d, 0x65, 0x02, 0x00, 0x00,
+	// 355 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x52, 0x41, 0x4f, 0xfa, 0x30,
+	0x1c, 0xfd, 0x03, 0xd9, 0x5f, 0x7c, 0x60, 0xc8, 0x2a, 0x21, 0xcd, 0x12, 0xe3, 0xd2, 0x93, 0x26,
+	0x86, 0xa8, 0xc4, 0x8b, 0x27, 0x3c, 0x18, 0x43, 0xe2, 0x69, 0xca, 0xd5, 0x64, 0x8e, 0x0a, 0x8d,
+	0xb8, 0x8e, 0xb5, 0xc3, 0xf0, 0x41, 0xfc, 0xbe, 0x66, 0xdd, 0x26, 0x83, 0x81, 0x07, 0x4f, 0xcd,
+	0xef, 0xfd, 0xde, 0x7b, 0x6d, 0x5f, 0x1e, 0xe0, 0x27, 0x7a, 0xd6, 0x8f, 0x62, 0xa9, 0x25, 0xb1,
+	0xcc, 0xc1, 0x2e, 0x41, 0x47, 0xea, 0xfe, 0xc3, 0x17, 0x73, 0x8f, 0x4f, 0x85, 0xd2, 0x3c, 0xe6,
+	0x13, 0x8f, 0x2f, 0x12, 0xae, 0x34, 0xe9, 0xc2, 0xe2, 0xe9, 0x86, 0xd6, 0xdc, 0xda, 0xd9, 0xa1,
+	0x97, 0x0d, 0xec, 0x06, 0xf6, 0x03, 0xd7, 0xa3, 0x70, 0x29, 0x34, 0x57, 0x05, 0xd5, 0x45, 0xcb,
+	0x0f, 0x02, 0x99, 0x84, 0x7a, 0x9c, 0x88, 0x49, 0x2e, 0x28, 0x43, 0x6c, 0x81, 0x4e, 0x71, 0xc3,
+	0xaf, 0xfe, 0xc4, 0x41, 0x33, 0xf2, 0x95, 0xfa, 0x94, 0xf1, 0x84, 0xd6, 0xcd, 0xe2, 0x67, 0x26,
+	0x17, 0xb0, 0x97, 0x3c, 0x16, 0x6f, 0x22, 0xf0, 0xb5, 0x90, 0xe1, 0xb3, 0x7c, 0xe7, 0x21, 0x6d,
+	0x18, 0x52, 0x75, 0xc1, 0x86, 0x68, 0x3f, 0xca, 0xa9, 0x08, 0xff, 0x7c, 0x1f, 0x7b, 0x41, 0x6f,
+	0x47, 0x3a, 0xd1, 0x7c, 0x45, 0x18, 0xda, 0x42, 0xad, 0x41, 0x63, 0xd9, 0xf4, 0x36, 0xb0, 0xed,
+	0x50, 0xea, 0xd5, 0x50, 0x06, 0xe8, 0x94, 0xb3, 0x4c, 0x8d, 0x5d, 0xb4, 0x84, 0x99, 0x53, 0x82,
+	0xa2, 0x35, 0xb7, 0x91, 0x8a, 0x4a, 0x10, 0x3b, 0xc7, 0xd1, 0x3a, 0xc9, 0x54, 0x42, 0x71, 0xa0,
+	0x92, 0x20, 0xe0, 0x4a, 0xe5, 0xcf, 0x28, 0x46, 0xc6, 0x80, 0x3c, 0x81, 0x94, 0xd7, 0x85, 0xa5,
+	0x4d, 0x62, 0xd9, 0x4b, 0xb2, 0xe1, 0xfa, 0xab, 0x8e, 0xd6, 0x5d, 0xa2, 0x67, 0x4f, 0x3c, 0x5e,
+	0x8a, 0x80, 0x93, 0x31, 0xec, 0xca, 0x9f, 0xc9, 0x69, 0xd6, 0x9a, 0xfe, 0xbe, 0xae, 0x38, 0x27,
+	0xfb, 0x09, 0xd1, 0x7c, 0xc5, 0xfe, 0x91, 0x21, 0xb0, 0xfe, 0x2a, 0xa1, 0x39, 0xbd, 0xd2, 0x24,
+	0xa7, 0xb7, 0x63, 0x93, 0x39, 0xdc, 0xa2, 0x59, 0xd8, 0x92, 0x82, 0xb5, 0x55, 0x29, 0xa7, 0x5b,
+	0xc1, 0x33, 0xed, 0x15, 0x2c, 0x13, 0x04, 0x39, 0xce, 0x09, 0xe5, 0x62, 0x38, 0xf6, 0x26, 0x68,
+	0x24, 0xaf, 0xff, 0x0d, 0x36, 0xf8, 0x0e, 0x00, 0x00, 0xff, 0xff, 0x31, 0xbd, 0xea, 0x6e, 0x35,
+	0x03, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -328,6 +421,7 @@ const _ = grpc.SupportPackageIsVersion4
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type AuthServiceClient interface {
 	IsEmailRegistered(ctx context.Context, in *IsEmailRegisteredRequest, opts ...grpc.CallOption) (*IsEmailRegisteredReply, error)
+	GetInvites(ctx context.Context, in *GetInvitesRequest, opts ...grpc.CallOption) (*GetInvitesReply, error)
 	Register(ctx context.Context, in *RegisterRequest, opts ...grpc.CallOption) (*RegisterReply, error)
 	Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginReply, error)
 }
@@ -343,6 +437,15 @@ func NewAuthServiceClient(cc *grpc.ClientConn) AuthServiceClient {
 func (c *authServiceClient) IsEmailRegistered(ctx context.Context, in *IsEmailRegisteredRequest, opts ...grpc.CallOption) (*IsEmailRegisteredReply, error) {
 	out := new(IsEmailRegisteredReply)
 	err := c.cc.Invoke(ctx, "/proto.AuthService/IsEmailRegistered", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authServiceClient) GetInvites(ctx context.Context, in *GetInvitesRequest, opts ...grpc.CallOption) (*GetInvitesReply, error) {
+	out := new(GetInvitesReply)
+	err := c.cc.Invoke(ctx, "/proto.AuthService/GetInvites", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -370,6 +473,7 @@ func (c *authServiceClient) Login(ctx context.Context, in *LoginRequest, opts ..
 // AuthServiceServer is the server API for AuthService service.
 type AuthServiceServer interface {
 	IsEmailRegistered(context.Context, *IsEmailRegisteredRequest) (*IsEmailRegisteredReply, error)
+	GetInvites(context.Context, *GetInvitesRequest) (*GetInvitesReply, error)
 	Register(context.Context, *RegisterRequest) (*RegisterReply, error)
 	Login(context.Context, *LoginRequest) (*LoginReply, error)
 }
@@ -380,6 +484,9 @@ type UnimplementedAuthServiceServer struct {
 
 func (*UnimplementedAuthServiceServer) IsEmailRegistered(ctx context.Context, req *IsEmailRegisteredRequest) (*IsEmailRegisteredReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method IsEmailRegistered not implemented")
+}
+func (*UnimplementedAuthServiceServer) GetInvites(ctx context.Context, req *GetInvitesRequest) (*GetInvitesReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetInvites not implemented")
 }
 func (*UnimplementedAuthServiceServer) Register(ctx context.Context, req *RegisterRequest) (*RegisterReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Register not implemented")
@@ -406,6 +513,24 @@ func _AuthService_IsEmailRegistered_Handler(srv interface{}, ctx context.Context
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AuthServiceServer).IsEmailRegistered(ctx, req.(*IsEmailRegisteredRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AuthService_GetInvites_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetInvitesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthServiceServer).GetInvites(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.AuthService/GetInvites",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthServiceServer).GetInvites(ctx, req.(*GetInvitesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -453,6 +578,10 @@ var _AuthService_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "IsEmailRegistered",
 			Handler:    _AuthService_IsEmailRegistered_Handler,
+		},
+		{
+			MethodName: "GetInvites",
+			Handler:    _AuthService_GetInvites_Handler,
 		},
 		{
 			MethodName: "Register",
