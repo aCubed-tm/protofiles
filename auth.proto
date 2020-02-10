@@ -7,6 +7,10 @@ service AuthService {
     rpc GetInvites (GetInvitesRequest) returns (GetInvitesReply) {}
     rpc Register (RegisterRequest) returns (RegisterReply) {}
     rpc Login (LoginRequest) returns (LoginReply) {}
+
+    // TODO: check token valid
+    rpc DropSingleToken (DropSingleTokenRequest) returns (DropSingleTokenReply) {}
+    rpc DropAllTokens (DropAllTokensRequest) returns (DropAllTokensReply) {}
 }
 
 message IsEmailRegisteredRequest {
@@ -41,4 +45,17 @@ message LoginRequest {
 
 message LoginReply {
     string token = 2;
+}
+
+message DropSingleTokenRequest {
+    string token = 1;
+}
+
+message DropSingleTokenReply {
+}
+
+message DropAllTokensRequest {
+}
+
+message DropAllTokensReply {
 }
