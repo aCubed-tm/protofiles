@@ -13,8 +13,17 @@ message IsEmailRegisteredRequest {
     string email = 1;
 }
 
+message IsEmailRegisteredReply {
+    bool isRegistered = 1;
+    string accountUuid = 2;
+}
+
 message GetInvitesRequest {
     string accountUuid = 1;
+}
+
+message GetInvitesReply {
+    repeated string inviteUuids = 1;
 }
 
 message RegisterRequest {
@@ -22,21 +31,12 @@ message RegisterRequest {
     string password = 2;
 }
 
+message RegisterReply {
+}
+
 message LoginRequest {
     string email = 1;
     string password = 2;
-}
-
-message IsEmailRegisteredReply {
-    bool isRegistered = 1;
-    string accountUuid = 2;
-}
-
-message GetInvitesReply {
-    repeated string inviteUuids = 1;
-}
-
-message RegisterReply {
 }
 
 message LoginReply {
