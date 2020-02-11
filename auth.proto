@@ -8,6 +8,8 @@ service AuthService {
     rpc Register (RegisterRequest) returns (RegisterReply) {}
     rpc Login (LoginRequest) returns (LoginReply) {}
 
+    rpc ActivateEmail (ActivateEmailRequest) returns (ActivateEmailReply) {}
+
     // TODO: check token valid
     rpc DropSingleToken (DropSingleTokenRequest) returns (DropSingleTokenReply) {}
     rpc DropAllTokens (DropAllTokensRequest) returns (DropAllTokensReply) {}
@@ -45,6 +47,14 @@ message LoginRequest {
 
 message LoginReply {
     string token = 2;
+}
+
+message ActivateEmailRequest {
+    string token = 1;
+}
+
+message ActivateEmailReply {
+    bool success = 1;
 }
 
 message DropSingleTokenRequest {
