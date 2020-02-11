@@ -4,6 +4,8 @@ package proto;
 
 service AuthService {
     rpc IsEmailRegistered (IsEmailRegisteredRequest) returns (IsEmailRegisteredReply) {}
+
+    // get all organizations a user uuid is invited by
     rpc GetInvites (GetInvitesRequest) returns (GetInvitesReply) {}
     rpc Register (RegisterRequest) returns (RegisterReply) {}
     rpc Login (LoginRequest) returns (LoginReply) {}
@@ -29,7 +31,7 @@ message GetInvitesRequest {
 }
 
 message GetInvitesReply {
-    repeated string inviteUuids = 1;
+    repeated string organizationUuids = 1;
 }
 
 message RegisterRequest {
@@ -54,7 +56,6 @@ message ActivateEmailRequest {
 }
 
 message ActivateEmailReply {
-    bool success = 1;
 }
 
 message DropSingleTokenRequest {
@@ -62,7 +63,6 @@ message DropSingleTokenRequest {
 }
 
 message DropSingleTokenReply {
-    bool success = 1;
 }
 
 message DropAllTokensRequest {
@@ -71,5 +71,4 @@ message DropAllTokensRequest {
 }
 
 message DropAllTokensReply {
-    bool success = 1;
 }
