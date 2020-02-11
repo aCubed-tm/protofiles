@@ -55,6 +55,8 @@ message DropSingleTokenReply {
 }
 
 message DropAllTokensRequest {
+    // A valid token of the account to drop all tokens of.
+    string token = 1;
 }
 
 message DropAllTokensReply {
