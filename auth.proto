@@ -62,6 +62,7 @@ message DropSingleTokenRequest {
 }
 
 message DropSingleTokenReply {
+    bool success = 1;
 }
 
 message DropAllTokensRequest {
@@ -70,4 +71,5 @@ message DropAllTokensRequest {
 }
 
 message DropAllTokensReply {
+    bool success = 1;
 }
