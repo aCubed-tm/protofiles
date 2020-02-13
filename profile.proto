@@ -10,6 +10,7 @@ message UpdateProfileRequest {
     string uuid = 1;
     string firstName = 2;
     string lastName = 3;
+    string description = 4;
 }
 
 message UpdateProfileReply {
