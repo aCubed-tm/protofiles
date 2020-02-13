@@ -6,6 +6,10 @@ service ProfileService {
     rpc CreateProfile (CreateProfileRequest) returns (CreateProfileReply) {}
     rpc GetProfile (GetProfileRequest) returns (GetProfileReply) {}
     rpc UpdateProfile (UpdateProfileRequest) returns (UpdateProfileReply) {}
+
+    rpc CreateOrganizationProfile (CreateOrganizationProfileRequest) returns (CreateOrganizationProfileReply) {}
+    rpc GetOrganizationProfile (GetOrganizationProfileRequest) returns (GetOrganizationProfileReply) {}
+    rpc UpdateOrganizationProfile (UpdateOrganizationProfileRequest) returns (UpdateOrganizationProfileReply) {}
 }
 
 message CreateProfileRequest {
@@ -36,4 +40,31 @@ message UpdateProfileRequest {
 }
 
 message UpdateProfileReply {
+}
+
+message CreateOrganizationProfileRequest {
+    string uuid = 1;
+    string displayName = 2;
+    string description = 3;
+}
+
+message CreateOrganizationProfileReply {
+}
+
+message GetOrganizationProfileRequest {
+    string uuid = 1;
+}
+
+message GetOrganizationProfileReply {
+    string displayName = 1;
+    string description = 2;
+}
+
+message UpdateOrganizationProfileRequest {
+    string uuid = 1;
+    string displayName = 2;
+    string description = 3;
+}
+
+message UpdateOrganizationProfileReply {
 }
