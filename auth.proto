@@ -102,6 +102,8 @@ message AddEmailRequest {
 }
 
 message AddEmailReply {
+    string emailUuid = 1;
+    string verificationToken = 2;
 }
 
 message DeleteEmailRequest {
