@@ -10,6 +10,8 @@ service ProfileService {
     rpc CreateOrganizationProfile (CreateOrganizationProfileRequest) returns (CreateOrganizationProfileReply) {}
     rpc GetOrganizationProfile (GetOrganizationProfileRequest) returns (GetOrganizationProfileReply) {}
     rpc UpdateOrganizationProfile (UpdateOrganizationProfileRequest) returns (UpdateOrganizationProfileReply) {}
+
+    rpc GetEmails (GetEmailsRequest) returns (GetEmailsReply) {}
 }
 
 message CreateProfileRequest {
@@ -67,4 +69,17 @@ message UpdateOrganizationProfileRequest {
 }
 
 message UpdateOrganizationProfileReply {
+}
+
+message GetEmailsRequest {
+    string uuid = 1;
+}
+
+message GetEmailsReply {
+    repeated UserEmail emails = 1;
+}
+
+message UserEmail {
+    string email = 1;
+    bool isPrimary = 2;
 }
