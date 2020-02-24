@@ -15,6 +15,13 @@ service AuthService {
     rpc GetUuidFromToken (GetUuidFromTokenRequest) returns (GetUuidFromTokenReply) {}
     rpc DropSingleToken (DropSingleTokenRequest) returns (DropSingleTokenReply) {}
     rpc DropAllTokens (DropAllTokensRequest) returns (DropAllTokensReply) {}
+
+    // sets an email to primary and sets all others to non-primary
+    rpc MakeEmailPrimary (MakeEmailPrimaryRequest) returns (MakeEmailPrimaryReply) {}
+    // adds an email that will be set to non-primary
+    rpc AddEmail (AddEmailRequest) returns (AddEmailReply) {}
+    // deletes an email if it is non-primary
+    rpc DeleteEmail (DeleteEmailRequest) returns (DeleteEmailReply) {}
 }
 
 message IsEmailRegisteredRequest {
@@ -79,4 +86,28 @@ message DropAllTokensRequest {
 }
 
 message DropAllTokensReply {
+}
+
+message MakeEmailPrimaryRequest {
+    string emailUuid = 1;
+}
+
+message MakeEmailPrimaryReply {
+}
+
+message AddEmailRequest {
+    // uuid of the account
+    string accountUuid = 1;
+    string email = 2;
+}
+
+message AddEmailReply {
+}
+
+message DeleteEmailRequest {
+    // uuid of the email to delete. should not be a primary email
+    string uuid = 1;
+}
+
+message DeleteEmailReply {
 }
