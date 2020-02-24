@@ -24,10 +24,199 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
+type CreateProfileRequest struct {
+	Uuid                 string   `protobuf:"bytes,1,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	FirstName            string   `protobuf:"bytes,2,opt,name=firstName,proto3" json:"firstName,omitempty"`
+	LastName             string   `protobuf:"bytes,3,opt,name=lastName,proto3" json:"lastName,omitempty"`
+	Description          string   `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CreateProfileRequest) Reset()         { *m = CreateProfileRequest{} }
+func (m *CreateProfileRequest) String() string { return proto.CompactTextString(m) }
+func (*CreateProfileRequest) ProtoMessage()    {}
+func (*CreateProfileRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_744bf7a47b381504, []int{0}
+}
+
+func (m *CreateProfileRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CreateProfileRequest.Unmarshal(m, b)
+}
+func (m *CreateProfileRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CreateProfileRequest.Marshal(b, m, deterministic)
+}
+func (m *CreateProfileRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CreateProfileRequest.Merge(m, src)
+}
+func (m *CreateProfileRequest) XXX_Size() int {
+	return xxx_messageInfo_CreateProfileRequest.Size(m)
+}
+func (m *CreateProfileRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_CreateProfileRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CreateProfileRequest proto.InternalMessageInfo
+
+func (m *CreateProfileRequest) GetUuid() string {
+	if m != nil {
+		return m.Uuid
+	}
+	return ""
+}
+
+func (m *CreateProfileRequest) GetFirstName() string {
+	if m != nil {
+		return m.FirstName
+	}
+	return ""
+}
+
+func (m *CreateProfileRequest) GetLastName() string {
+	if m != nil {
+		return m.LastName
+	}
+	return ""
+}
+
+func (m *CreateProfileRequest) GetDescription() string {
+	if m != nil {
+		return m.Description
+	}
+	return ""
+}
+
+type CreateProfileReply struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CreateProfileReply) Reset()         { *m = CreateProfileReply{} }
+func (m *CreateProfileReply) String() string { return proto.CompactTextString(m) }
+func (*CreateProfileReply) ProtoMessage()    {}
+func (*CreateProfileReply) Descriptor() ([]byte, []int) {
+	return fileDescriptor_744bf7a47b381504, []int{1}
+}
+
+func (m *CreateProfileReply) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CreateProfileReply.Unmarshal(m, b)
+}
+func (m *CreateProfileReply) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CreateProfileReply.Marshal(b, m, deterministic)
+}
+func (m *CreateProfileReply) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CreateProfileReply.Merge(m, src)
+}
+func (m *CreateProfileReply) XXX_Size() int {
+	return xxx_messageInfo_CreateProfileReply.Size(m)
+}
+func (m *CreateProfileReply) XXX_DiscardUnknown() {
+	xxx_messageInfo_CreateProfileReply.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CreateProfileReply proto.InternalMessageInfo
+
+type GetProfileRequest struct {
+	Uuid                 string   `protobuf:"bytes,1,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetProfileRequest) Reset()         { *m = GetProfileRequest{} }
+func (m *GetProfileRequest) String() string { return proto.CompactTextString(m) }
+func (*GetProfileRequest) ProtoMessage()    {}
+func (*GetProfileRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_744bf7a47b381504, []int{2}
+}
+
+func (m *GetProfileRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetProfileRequest.Unmarshal(m, b)
+}
+func (m *GetProfileRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetProfileRequest.Marshal(b, m, deterministic)
+}
+func (m *GetProfileRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetProfileRequest.Merge(m, src)
+}
+func (m *GetProfileRequest) XXX_Size() int {
+	return xxx_messageInfo_GetProfileRequest.Size(m)
+}
+func (m *GetProfileRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetProfileRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetProfileRequest proto.InternalMessageInfo
+
+func (m *GetProfileRequest) GetUuid() string {
+	if m != nil {
+		return m.Uuid
+	}
+	return ""
+}
+
+type GetProfileReply struct {
+	FirstName            string   `protobuf:"bytes,1,opt,name=firstName,proto3" json:"firstName,omitempty"`
+	LastName             string   `protobuf:"bytes,2,opt,name=lastName,proto3" json:"lastName,omitempty"`
+	Description          string   `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetProfileReply) Reset()         { *m = GetProfileReply{} }
+func (m *GetProfileReply) String() string { return proto.CompactTextString(m) }
+func (*GetProfileReply) ProtoMessage()    {}
+func (*GetProfileReply) Descriptor() ([]byte, []int) {
+	return fileDescriptor_744bf7a47b381504, []int{3}
+}
+
+func (m *GetProfileReply) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetProfileReply.Unmarshal(m, b)
+}
+func (m *GetProfileReply) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetProfileReply.Marshal(b, m, deterministic)
+}
+func (m *GetProfileReply) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetProfileReply.Merge(m, src)
+}
+func (m *GetProfileReply) XXX_Size() int {
+	return xxx_messageInfo_GetProfileReply.Size(m)
+}
+func (m *GetProfileReply) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetProfileReply.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetProfileReply proto.InternalMessageInfo
+
+func (m *GetProfileReply) GetFirstName() string {
+	if m != nil {
+		return m.FirstName
+	}
+	return ""
+}
+
+func (m *GetProfileReply) GetLastName() string {
+	if m != nil {
+		return m.LastName
+	}
+	return ""
+}
+
+func (m *GetProfileReply) GetDescription() string {
+	if m != nil {
+		return m.Description
+	}
+	return ""
+}
+
 type UpdateProfileRequest struct {
 	Uuid                 string   `protobuf:"bytes,1,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	FirstName            string   `protobuf:"bytes,2,opt,name=firstName,proto3" json:"firstName,omitempty"`
 	LastName             string   `protobuf:"bytes,3,opt,name=lastName,proto3" json:"lastName,omitempty"`
+	Description          string   `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -37,7 +226,7 @@ func (m *UpdateProfileRequest) Reset()         { *m = UpdateProfileRequest{} }
 func (m *UpdateProfileRequest) String() string { return proto.CompactTextString(m) }
 func (*UpdateProfileRequest) ProtoMessage()    {}
 func (*UpdateProfileRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_744bf7a47b381504, []int{0}
+	return fileDescriptor_744bf7a47b381504, []int{4}
 }
 
 func (m *UpdateProfileRequest) XXX_Unmarshal(b []byte) error {
@@ -79,8 +268,14 @@ func (m *UpdateProfileRequest) GetLastName() string {
 	return ""
 }
 
+func (m *UpdateProfileRequest) GetDescription() string {
+	if m != nil {
+		return m.Description
+	}
+	return ""
+}
+
 type UpdateProfileReply struct {
-	Success              bool     `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -90,7 +285,7 @@ func (m *UpdateProfileReply) Reset()         { *m = UpdateProfileReply{} }
 func (m *UpdateProfileReply) String() string { return proto.CompactTextString(m) }
 func (*UpdateProfileReply) ProtoMessage()    {}
 func (*UpdateProfileReply) Descriptor() ([]byte, []int) {
-	return fileDescriptor_744bf7a47b381504, []int{1}
+	return fileDescriptor_744bf7a47b381504, []int{5}
 }
 
 func (m *UpdateProfileReply) XXX_Unmarshal(b []byte) error {
@@ -111,33 +306,307 @@ func (m *UpdateProfileReply) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_UpdateProfileReply proto.InternalMessageInfo
 
-func (m *UpdateProfileReply) GetSuccess() bool {
-	if m != nil {
-		return m.Success
-	}
-	return false
+type CreateOrganizationProfileRequest struct {
+	Uuid                 string   `protobuf:"bytes,1,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	DisplayName          string   `protobuf:"bytes,2,opt,name=displayName,proto3" json:"displayName,omitempty"`
+	Description          string   `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
 }
 
+func (m *CreateOrganizationProfileRequest) Reset()         { *m = CreateOrganizationProfileRequest{} }
+func (m *CreateOrganizationProfileRequest) String() string { return proto.CompactTextString(m) }
+func (*CreateOrganizationProfileRequest) ProtoMessage()    {}
+func (*CreateOrganizationProfileRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_744bf7a47b381504, []int{6}
+}
+
+func (m *CreateOrganizationProfileRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CreateOrganizationProfileRequest.Unmarshal(m, b)
+}
+func (m *CreateOrganizationProfileRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CreateOrganizationProfileRequest.Marshal(b, m, deterministic)
+}
+func (m *CreateOrganizationProfileRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CreateOrganizationProfileRequest.Merge(m, src)
+}
+func (m *CreateOrganizationProfileRequest) XXX_Size() int {
+	return xxx_messageInfo_CreateOrganizationProfileRequest.Size(m)
+}
+func (m *CreateOrganizationProfileRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_CreateOrganizationProfileRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CreateOrganizationProfileRequest proto.InternalMessageInfo
+
+func (m *CreateOrganizationProfileRequest) GetUuid() string {
+	if m != nil {
+		return m.Uuid
+	}
+	return ""
+}
+
+func (m *CreateOrganizationProfileRequest) GetDisplayName() string {
+	if m != nil {
+		return m.DisplayName
+	}
+	return ""
+}
+
+func (m *CreateOrganizationProfileRequest) GetDescription() string {
+	if m != nil {
+		return m.Description
+	}
+	return ""
+}
+
+type CreateOrganizationProfileReply struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CreateOrganizationProfileReply) Reset()         { *m = CreateOrganizationProfileReply{} }
+func (m *CreateOrganizationProfileReply) String() string { return proto.CompactTextString(m) }
+func (*CreateOrganizationProfileReply) ProtoMessage()    {}
+func (*CreateOrganizationProfileReply) Descriptor() ([]byte, []int) {
+	return fileDescriptor_744bf7a47b381504, []int{7}
+}
+
+func (m *CreateOrganizationProfileReply) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CreateOrganizationProfileReply.Unmarshal(m, b)
+}
+func (m *CreateOrganizationProfileReply) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CreateOrganizationProfileReply.Marshal(b, m, deterministic)
+}
+func (m *CreateOrganizationProfileReply) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CreateOrganizationProfileReply.Merge(m, src)
+}
+func (m *CreateOrganizationProfileReply) XXX_Size() int {
+	return xxx_messageInfo_CreateOrganizationProfileReply.Size(m)
+}
+func (m *CreateOrganizationProfileReply) XXX_DiscardUnknown() {
+	xxx_messageInfo_CreateOrganizationProfileReply.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CreateOrganizationProfileReply proto.InternalMessageInfo
+
+type GetOrganizationProfileRequest struct {
+	Uuid                 string   `protobuf:"bytes,1,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetOrganizationProfileRequest) Reset()         { *m = GetOrganizationProfileRequest{} }
+func (m *GetOrganizationProfileRequest) String() string { return proto.CompactTextString(m) }
+func (*GetOrganizationProfileRequest) ProtoMessage()    {}
+func (*GetOrganizationProfileRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_744bf7a47b381504, []int{8}
+}
+
+func (m *GetOrganizationProfileRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetOrganizationProfileRequest.Unmarshal(m, b)
+}
+func (m *GetOrganizationProfileRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetOrganizationProfileRequest.Marshal(b, m, deterministic)
+}
+func (m *GetOrganizationProfileRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetOrganizationProfileRequest.Merge(m, src)
+}
+func (m *GetOrganizationProfileRequest) XXX_Size() int {
+	return xxx_messageInfo_GetOrganizationProfileRequest.Size(m)
+}
+func (m *GetOrganizationProfileRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetOrganizationProfileRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetOrganizationProfileRequest proto.InternalMessageInfo
+
+func (m *GetOrganizationProfileRequest) GetUuid() string {
+	if m != nil {
+		return m.Uuid
+	}
+	return ""
+}
+
+type GetOrganizationProfileReply struct {
+	DisplayName          string   `protobuf:"bytes,1,opt,name=displayName,proto3" json:"displayName,omitempty"`
+	Description          string   `protobuf:"bytes,2,opt,name=description,proto3" json:"description,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetOrganizationProfileReply) Reset()         { *m = GetOrganizationProfileReply{} }
+func (m *GetOrganizationProfileReply) String() string { return proto.CompactTextString(m) }
+func (*GetOrganizationProfileReply) ProtoMessage()    {}
+func (*GetOrganizationProfileReply) Descriptor() ([]byte, []int) {
+	return fileDescriptor_744bf7a47b381504, []int{9}
+}
+
+func (m *GetOrganizationProfileReply) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetOrganizationProfileReply.Unmarshal(m, b)
+}
+func (m *GetOrganizationProfileReply) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetOrganizationProfileReply.Marshal(b, m, deterministic)
+}
+func (m *GetOrganizationProfileReply) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetOrganizationProfileReply.Merge(m, src)
+}
+func (m *GetOrganizationProfileReply) XXX_Size() int {
+	return xxx_messageInfo_GetOrganizationProfileReply.Size(m)
+}
+func (m *GetOrganizationProfileReply) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetOrganizationProfileReply.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetOrganizationProfileReply proto.InternalMessageInfo
+
+func (m *GetOrganizationProfileReply) GetDisplayName() string {
+	if m != nil {
+		return m.DisplayName
+	}
+	return ""
+}
+
+func (m *GetOrganizationProfileReply) GetDescription() string {
+	if m != nil {
+		return m.Description
+	}
+	return ""
+}
+
+type UpdateOrganizationProfileRequest struct {
+	Uuid                 string   `protobuf:"bytes,1,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	DisplayName          string   `protobuf:"bytes,2,opt,name=displayName,proto3" json:"displayName,omitempty"`
+	Description          string   `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *UpdateOrganizationProfileRequest) Reset()         { *m = UpdateOrganizationProfileRequest{} }
+func (m *UpdateOrganizationProfileRequest) String() string { return proto.CompactTextString(m) }
+func (*UpdateOrganizationProfileRequest) ProtoMessage()    {}
+func (*UpdateOrganizationProfileRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_744bf7a47b381504, []int{10}
+}
+
+func (m *UpdateOrganizationProfileRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_UpdateOrganizationProfileRequest.Unmarshal(m, b)
+}
+func (m *UpdateOrganizationProfileRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_UpdateOrganizationProfileRequest.Marshal(b, m, deterministic)
+}
+func (m *UpdateOrganizationProfileRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_UpdateOrganizationProfileRequest.Merge(m, src)
+}
+func (m *UpdateOrganizationProfileRequest) XXX_Size() int {
+	return xxx_messageInfo_UpdateOrganizationProfileRequest.Size(m)
+}
+func (m *UpdateOrganizationProfileRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_UpdateOrganizationProfileRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_UpdateOrganizationProfileRequest proto.InternalMessageInfo
+
+func (m *UpdateOrganizationProfileRequest) GetUuid() string {
+	if m != nil {
+		return m.Uuid
+	}
+	return ""
+}
+
+func (m *UpdateOrganizationProfileRequest) GetDisplayName() string {
+	if m != nil {
+		return m.DisplayName
+	}
+	return ""
+}
+
+func (m *UpdateOrganizationProfileRequest) GetDescription() string {
+	if m != nil {
+		return m.Description
+	}
+	return ""
+}
+
+type UpdateOrganizationProfileReply struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *UpdateOrganizationProfileReply) Reset()         { *m = UpdateOrganizationProfileReply{} }
+func (m *UpdateOrganizationProfileReply) String() string { return proto.CompactTextString(m) }
+func (*UpdateOrganizationProfileReply) ProtoMessage()    {}
+func (*UpdateOrganizationProfileReply) Descriptor() ([]byte, []int) {
+	return fileDescriptor_744bf7a47b381504, []int{11}
+}
+
+func (m *UpdateOrganizationProfileReply) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_UpdateOrganizationProfileReply.Unmarshal(m, b)
+}
+func (m *UpdateOrganizationProfileReply) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_UpdateOrganizationProfileReply.Marshal(b, m, deterministic)
+}
+func (m *UpdateOrganizationProfileReply) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_UpdateOrganizationProfileReply.Merge(m, src)
+}
+func (m *UpdateOrganizationProfileReply) XXX_Size() int {
+	return xxx_messageInfo_UpdateOrganizationProfileReply.Size(m)
+}
+func (m *UpdateOrganizationProfileReply) XXX_DiscardUnknown() {
+	xxx_messageInfo_UpdateOrganizationProfileReply.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_UpdateOrganizationProfileReply proto.InternalMessageInfo
+
 func init() {
+	proto.RegisterType((*CreateProfileRequest)(nil), "proto.CreateProfileRequest")
+	proto.RegisterType((*CreateProfileReply)(nil), "proto.CreateProfileReply")
+	proto.RegisterType((*GetProfileRequest)(nil), "proto.GetProfileRequest")
+	proto.RegisterType((*GetProfileReply)(nil), "proto.GetProfileReply")
 	proto.RegisterType((*UpdateProfileRequest)(nil), "proto.UpdateProfileRequest")
 	proto.RegisterType((*UpdateProfileReply)(nil), "proto.UpdateProfileReply")
+	proto.RegisterType((*CreateOrganizationProfileRequest)(nil), "proto.CreateOrganizationProfileRequest")
+	proto.RegisterType((*CreateOrganizationProfileReply)(nil), "proto.CreateOrganizationProfileReply")
+	proto.RegisterType((*GetOrganizationProfileRequest)(nil), "proto.GetOrganizationProfileRequest")
+	proto.RegisterType((*GetOrganizationProfileReply)(nil), "proto.GetOrganizationProfileReply")
+	proto.RegisterType((*UpdateOrganizationProfileRequest)(nil), "proto.UpdateOrganizationProfileRequest")
+	proto.RegisterType((*UpdateOrganizationProfileReply)(nil), "proto.UpdateOrganizationProfileReply")
 }
 
 func init() { proto.RegisterFile("profile.proto", fileDescriptor_744bf7a47b381504) }
 
 var fileDescriptor_744bf7a47b381504 = []byte{
-	// 178 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xe2, 0x2d, 0x28, 0xca, 0x4f,
-	0xcb, 0xcc, 0x49, 0xd5, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x05, 0x53, 0x4a, 0x29, 0x5c,
-	0x22, 0xa1, 0x05, 0x29, 0x89, 0x25, 0xa9, 0x01, 0x10, 0xd9, 0xa0, 0xd4, 0xc2, 0xd2, 0xd4, 0xe2,
-	0x12, 0x21, 0x21, 0x2e, 0x96, 0xd2, 0xd2, 0xcc, 0x14, 0x09, 0x46, 0x05, 0x46, 0x0d, 0xce, 0x20,
-	0x30, 0x5b, 0x48, 0x86, 0x8b, 0x33, 0x2d, 0xb3, 0xa8, 0xb8, 0xc4, 0x2f, 0x31, 0x37, 0x55, 0x82,
-	0x09, 0x2c, 0x81, 0x10, 0x10, 0x92, 0xe2, 0xe2, 0xc8, 0x49, 0x84, 0x4a, 0x32, 0x83, 0x25, 0xe1,
-	0x7c, 0x25, 0x3d, 0x2e, 0x21, 0x34, 0x5b, 0x0a, 0x72, 0x2a, 0x85, 0x24, 0xb8, 0xd8, 0x8b, 0x4b,
-	0x93, 0x93, 0x53, 0x8b, 0x8b, 0xc1, 0xd6, 0x70, 0x04, 0xc1, 0xb8, 0x46, 0xd1, 0x5c, 0x7c, 0x50,
-	0x95, 0xc1, 0xa9, 0x45, 0x65, 0x99, 0xc9, 0xa9, 0x42, 0x9e, 0x5c, 0xbc, 0x28, 0x26, 0x08, 0x49,
-	0x43, 0xfc, 0xa1, 0x87, 0xcd, 0xf5, 0x52, 0x92, 0xd8, 0x25, 0x0b, 0x72, 0x2a, 0x95, 0x18, 0x92,
-	0xd8, 0xc0, 0x72, 0xc6, 0x80, 0x00, 0x00, 0x00, 0xff, 0xff, 0x76, 0x05, 0x32, 0xc3, 0x11, 0x01,
+	// 386 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xcc, 0x93, 0xc1, 0x4e, 0xf2, 0x40,
+	0x10, 0xc7, 0x29, 0xf0, 0x7d, 0x91, 0x31, 0x68, 0x9c, 0x10, 0x52, 0x8a, 0x9a, 0x66, 0xa3, 0xc1,
+	0x13, 0x07, 0x79, 0x01, 0x13, 0x0f, 0x84, 0x8b, 0x1a, 0x8c, 0x0f, 0xb0, 0xd2, 0xc5, 0x6c, 0x52,
+	0xe8, 0xba, 0x5d, 0x4c, 0xca, 0x03, 0xf8, 0x34, 0x3e, 0xa4, 0xd9, 0x96, 0x94, 0x16, 0xda, 0x2d,
+	0x9e, 0xf4, 0x04, 0x9d, 0xff, 0xb4, 0xf3, 0x9b, 0xff, 0xcc, 0x40, 0x5b, 0xc8, 0x60, 0xce, 0x7d,
+	0x36, 0x14, 0x32, 0x50, 0x01, 0xfe, 0x8b, 0x7f, 0xc8, 0xa7, 0x05, 0x9d, 0x7b, 0xc9, 0xa8, 0x62,
+	0x4f, 0x89, 0x3c, 0x65, 0xef, 0x2b, 0x16, 0x2a, 0x44, 0x68, 0xae, 0x56, 0xdc, 0xb3, 0x2d, 0xd7,
+	0xba, 0x69, 0x4d, 0xe3, 0xff, 0x78, 0x0e, 0xad, 0x39, 0x97, 0xa1, 0x7a, 0xa0, 0x0b, 0x66, 0xd7,
+	0x63, 0x61, 0x1b, 0x40, 0x07, 0x8e, 0x7c, 0xba, 0x11, 0x1b, 0xb1, 0x98, 0x3e, 0xa3, 0x0b, 0xc7,
+	0x1e, 0x0b, 0x67, 0x92, 0x0b, 0xc5, 0x83, 0xa5, 0xdd, 0x8c, 0xe5, 0x6c, 0x88, 0x74, 0x00, 0x77,
+	0x38, 0x84, 0x1f, 0x91, 0x01, 0x9c, 0x8d, 0x99, 0xaa, 0x46, 0x23, 0x0b, 0x38, 0xcd, 0x26, 0x0a,
+	0x3f, 0xca, 0xd3, 0x5a, 0x26, 0xda, 0xba, 0x99, 0xb6, 0xb1, 0x4f, 0xab, 0x6d, 0x7b, 0x11, 0xde,
+	0x9f, 0xb0, 0x6d, 0x87, 0x43, 0xdb, 0xb6, 0x06, 0x37, 0x31, 0xf3, 0x51, 0xbe, 0xd1, 0x25, 0x5f,
+	0x53, 0x9d, 0x7b, 0x00, 0xa9, 0xae, 0xc7, 0x43, 0xe1, 0xd3, 0x28, 0xc3, 0x9a, 0x0d, 0x1d, 0x60,
+	0x8d, 0x0b, 0x97, 0x86, 0xda, 0x9a, 0x6e, 0x04, 0x17, 0x63, 0xa6, 0x7e, 0x86, 0x46, 0x28, 0xf4,
+	0xcb, 0x5e, 0xd2, 0xc3, 0xde, 0x21, 0xb7, 0x2a, 0xc9, 0xeb, 0xfb, 0xe4, 0x6b, 0x70, 0x13, 0x2f,
+	0x7f, 0xc7, 0x35, 0x43, 0x6d, 0xe1, 0x47, 0xb7, 0x5f, 0x4d, 0x38, 0xd9, 0x04, 0x9e, 0x99, 0xfc,
+	0xe0, 0x33, 0x86, 0x13, 0x68, 0xe7, 0x6e, 0x06, 0xfb, 0xc9, 0x71, 0x0f, 0x8b, 0x2e, 0xda, 0xe9,
+	0x15, 0x8b, 0x7a, 0x22, 0x35, 0xbc, 0x03, 0xd8, 0xde, 0x0f, 0xda, 0x9b, 0xd4, 0xbd, 0xdb, 0x73,
+	0xba, 0x05, 0x4a, 0xf2, 0x85, 0x09, 0xb4, 0x73, 0x9b, 0x98, 0xc2, 0x14, 0xdd, 0x49, 0x0a, 0x53,
+	0xb0, 0xbc, 0x35, 0x5c, 0x40, 0xaf, 0x74, 0x85, 0x70, 0x90, 0x6b, 0xa3, 0x7c, 0x54, 0xce, 0x75,
+	0x75, 0x62, 0x52, 0xce, 0x83, 0x6e, 0xf1, 0x6a, 0xe1, 0xd5, 0xb6, 0x5b, 0x43, 0x21, 0x52, 0x91,
+	0x95, 0x36, 0x55, 0x3a, 0xe1, 0xb4, 0xa9, 0xaa, 0xfd, 0x4b, 0x9b, 0x32, 0x2f, 0x0b, 0xa9, 0xbd,
+	0xfe, 0x8f, 0xf3, 0x46, 0xdf, 0x01, 0x00, 0x00, 0xff, 0xff, 0xd4, 0x4f, 0x81, 0xf7, 0xf7, 0x05,
 	0x00, 0x00,
 }
 
@@ -153,7 +622,12 @@ const _ = grpc.SupportPackageIsVersion6
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type ProfileServiceClient interface {
+	CreateProfile(ctx context.Context, in *CreateProfileRequest, opts ...grpc.CallOption) (*CreateProfileReply, error)
+	GetProfile(ctx context.Context, in *GetProfileRequest, opts ...grpc.CallOption) (*GetProfileReply, error)
 	UpdateProfile(ctx context.Context, in *UpdateProfileRequest, opts ...grpc.CallOption) (*UpdateProfileReply, error)
+	CreateOrganizationProfile(ctx context.Context, in *CreateOrganizationProfileRequest, opts ...grpc.CallOption) (*CreateOrganizationProfileReply, error)
+	GetOrganizationProfile(ctx context.Context, in *GetOrganizationProfileRequest, opts ...grpc.CallOption) (*GetOrganizationProfileReply, error)
+	UpdateOrganizationProfile(ctx context.Context, in *UpdateOrganizationProfileRequest, opts ...grpc.CallOption) (*UpdateOrganizationProfileReply, error)
 }
 
 type profileServiceClient struct {
@@ -162,6 +636,24 @@ type profileServiceClient struct {
 
 func NewProfileServiceClient(cc grpc.ClientConnInterface) ProfileServiceClient {
 	return &profileServiceClient{cc}
+}
+
+func (c *profileServiceClient) CreateProfile(ctx context.Context, in *CreateProfileRequest, opts ...grpc.CallOption) (*CreateProfileReply, error) {
+	out := new(CreateProfileReply)
+	err := c.cc.Invoke(ctx, "/proto.ProfileService/CreateProfile", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *profileServiceClient) GetProfile(ctx context.Context, in *GetProfileRequest, opts ...grpc.CallOption) (*GetProfileReply, error) {
+	out := new(GetProfileReply)
+	err := c.cc.Invoke(ctx, "/proto.ProfileService/GetProfile", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *profileServiceClient) UpdateProfile(ctx context.Context, in *UpdateProfileRequest, opts ...grpc.CallOption) (*UpdateProfileReply, error) {
@@ -173,21 +665,104 @@ func (c *profileServiceClient) UpdateProfile(ctx context.Context, in *UpdateProf
 	return out, nil
 }
 
+func (c *profileServiceClient) CreateOrganizationProfile(ctx context.Context, in *CreateOrganizationProfileRequest, opts ...grpc.CallOption) (*CreateOrganizationProfileReply, error) {
+	out := new(CreateOrganizationProfileReply)
+	err := c.cc.Invoke(ctx, "/proto.ProfileService/CreateOrganizationProfile", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *profileServiceClient) GetOrganizationProfile(ctx context.Context, in *GetOrganizationProfileRequest, opts ...grpc.CallOption) (*GetOrganizationProfileReply, error) {
+	out := new(GetOrganizationProfileReply)
+	err := c.cc.Invoke(ctx, "/proto.ProfileService/GetOrganizationProfile", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *profileServiceClient) UpdateOrganizationProfile(ctx context.Context, in *UpdateOrganizationProfileRequest, opts ...grpc.CallOption) (*UpdateOrganizationProfileReply, error) {
+	out := new(UpdateOrganizationProfileReply)
+	err := c.cc.Invoke(ctx, "/proto.ProfileService/UpdateOrganizationProfile", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ProfileServiceServer is the server API for ProfileService service.
 type ProfileServiceServer interface {
+	CreateProfile(context.Context, *CreateProfileRequest) (*CreateProfileReply, error)
+	GetProfile(context.Context, *GetProfileRequest) (*GetProfileReply, error)
 	UpdateProfile(context.Context, *UpdateProfileRequest) (*UpdateProfileReply, error)
+	CreateOrganizationProfile(context.Context, *CreateOrganizationProfileRequest) (*CreateOrganizationProfileReply, error)
+	GetOrganizationProfile(context.Context, *GetOrganizationProfileRequest) (*GetOrganizationProfileReply, error)
+	UpdateOrganizationProfile(context.Context, *UpdateOrganizationProfileRequest) (*UpdateOrganizationProfileReply, error)
 }
 
 // UnimplementedProfileServiceServer can be embedded to have forward compatible implementations.
 type UnimplementedProfileServiceServer struct {
 }
 
+func (*UnimplementedProfileServiceServer) CreateProfile(ctx context.Context, req *CreateProfileRequest) (*CreateProfileReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateProfile not implemented")
+}
+func (*UnimplementedProfileServiceServer) GetProfile(ctx context.Context, req *GetProfileRequest) (*GetProfileReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetProfile not implemented")
+}
 func (*UnimplementedProfileServiceServer) UpdateProfile(ctx context.Context, req *UpdateProfileRequest) (*UpdateProfileReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateProfile not implemented")
+}
+func (*UnimplementedProfileServiceServer) CreateOrganizationProfile(ctx context.Context, req *CreateOrganizationProfileRequest) (*CreateOrganizationProfileReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateOrganizationProfile not implemented")
+}
+func (*UnimplementedProfileServiceServer) GetOrganizationProfile(ctx context.Context, req *GetOrganizationProfileRequest) (*GetOrganizationProfileReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOrganizationProfile not implemented")
+}
+func (*UnimplementedProfileServiceServer) UpdateOrganizationProfile(ctx context.Context, req *UpdateOrganizationProfileRequest) (*UpdateOrganizationProfileReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateOrganizationProfile not implemented")
 }
 
 func RegisterProfileServiceServer(s *grpc.Server, srv ProfileServiceServer) {
 	s.RegisterService(&_ProfileService_serviceDesc, srv)
+}
+
+func _ProfileService_CreateProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateProfileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProfileServiceServer).CreateProfile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.ProfileService/CreateProfile",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProfileServiceServer).CreateProfile(ctx, req.(*CreateProfileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ProfileService_GetProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetProfileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProfileServiceServer).GetProfile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.ProfileService/GetProfile",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProfileServiceServer).GetProfile(ctx, req.(*GetProfileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _ProfileService_UpdateProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -208,13 +783,87 @@ func _ProfileService_UpdateProfile_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ProfileService_CreateOrganizationProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateOrganizationProfileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProfileServiceServer).CreateOrganizationProfile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.ProfileService/CreateOrganizationProfile",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProfileServiceServer).CreateOrganizationProfile(ctx, req.(*CreateOrganizationProfileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ProfileService_GetOrganizationProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOrganizationProfileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProfileServiceServer).GetOrganizationProfile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.ProfileService/GetOrganizationProfile",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProfileServiceServer).GetOrganizationProfile(ctx, req.(*GetOrganizationProfileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ProfileService_UpdateOrganizationProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateOrganizationProfileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProfileServiceServer).UpdateOrganizationProfile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.ProfileService/UpdateOrganizationProfile",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProfileServiceServer).UpdateOrganizationProfile(ctx, req.(*UpdateOrganizationProfileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _ProfileService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "proto.ProfileService",
 	HandlerType: (*ProfileServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
+			MethodName: "CreateProfile",
+			Handler:    _ProfileService_CreateProfile_Handler,
+		},
+		{
+			MethodName: "GetProfile",
+			Handler:    _ProfileService_GetProfile_Handler,
+		},
+		{
 			MethodName: "UpdateProfile",
 			Handler:    _ProfileService_UpdateProfile_Handler,
+		},
+		{
+			MethodName: "CreateOrganizationProfile",
+			Handler:    _ProfileService_CreateOrganizationProfile_Handler,
+		},
+		{
+			MethodName: "GetOrganizationProfile",
+			Handler:    _ProfileService_GetOrganizationProfile_Handler,
+		},
+		{
+			MethodName: "UpdateOrganizationProfile",
+			Handler:    _ProfileService_UpdateOrganizationProfile_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

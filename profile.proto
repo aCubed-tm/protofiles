@@ -3,15 +3,68 @@ syntax = "proto3";
 package proto;
 
 service ProfileService {
+    rpc CreateProfile (CreateProfileRequest) returns (CreateProfileReply) {}
+    rpc GetProfile (GetProfileRequest) returns (GetProfileReply) {}
     rpc UpdateProfile (UpdateProfileRequest) returns (UpdateProfileReply) {}
+
+    rpc CreateOrganizationProfile (CreateOrganizationProfileRequest) returns (CreateOrganizationProfileReply) {}
+    rpc GetOrganizationProfile (GetOrganizationProfileRequest) returns (GetOrganizationProfileReply) {}
+    rpc UpdateOrganizationProfile (UpdateOrganizationProfileRequest) returns (UpdateOrganizationProfileReply) {}
+}
+
+message CreateProfileRequest {
+    string uuid = 1;
+    string firstName = 2;
+    string lastName = 3;
+    string description = 4;
+}
+
+message CreateProfileReply {
+}
+
+message GetProfileRequest {
+    string uuid = 1;
+}
+
+message GetProfileReply {
+    string firstName = 1;
+    string lastName = 2;
+    string description = 3;
 }
 
 message UpdateProfileRequest {
     string uuid = 1;
     string firstName = 2;
     string lastName = 3;
+    string description = 4;
 }
 
 message UpdateProfileReply {
-    bool success = 1;
+}
+
+message CreateOrganizationProfileRequest {
+    string uuid = 1;
+    string displayName = 2;
+    string description = 3;
+}
+
+message CreateOrganizationProfileReply {
+}
+
+message GetOrganizationProfileRequest {
+    string uuid = 1;
+}
+
+message GetOrganizationProfileReply {
+    string displayName = 1;
+    string description = 2;
+}
+
+message UpdateOrganizationProfileRequest {
+    string uuid = 1;
+    string displayName = 2;
+    string description = 3;
+}
+
+message UpdateOrganizationProfileReply {
 }
