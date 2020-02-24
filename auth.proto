@@ -6,7 +6,7 @@ service AuthService {
     rpc IsEmailRegistered (IsEmailRegisteredRequest) returns (IsEmailRegisteredReply) {}
 
     // get all organizations a user uuid is invited by
-    rpc GetInvites (GetInvitesRequest) returns (GetInvitesReply) {}
+    rpc GetInvitesByEmail (GetInvitesByEmailRequest) returns (GetInvitesByEmailReply) {}
     rpc Register (RegisterRequest) returns (RegisterReply) {}
     rpc Login (LoginRequest) returns (LoginReply) {}
 
@@ -26,11 +26,11 @@ message IsEmailRegisteredReply {
     string accountUuid = 2;
 }
 
-message GetInvitesRequest {
-    string accountUuid = 1;
+message GetInvitesByEmailRequest {
+    string email = 1;
 }
 
-message GetInvitesReply {
+message GetInvitesByEmailReply {
     repeated string organizationUuids = 1;
 }
 
