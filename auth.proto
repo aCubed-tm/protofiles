@@ -12,7 +12,7 @@ service AuthService {
 
     rpc ActivateEmail (ActivateEmailRequest) returns (ActivateEmailReply) {}
 
-    // TODO: check token valid
+    rpc GetUuidFromToken (GetUuidFromTokenRequest) returns (GetUuidFromTokenReply) {}
     rpc DropSingleToken (DropSingleTokenRequest) returns (DropSingleTokenReply) {}
     rpc DropAllTokens (DropAllTokensRequest) returns (DropAllTokensReply) {}
 }
@@ -56,6 +56,14 @@ message ActivateEmailRequest {
 }
 
 message ActivateEmailReply {
+}
+
+message GetUuidFromTokenRequest {
+    string token = 1;
+}
+
+message GetUuidFromTokenReply {
+    string uuid = 1;
 }
 
 message DropSingleTokenRequest {
