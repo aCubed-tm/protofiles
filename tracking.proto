@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package proto;
+
+service TrackingService {
+    // Adds a capture from a camera to the database, without calculating 3d coordinates
+    rpc AddCapture (AddCaptureRequest) returns (AddCaptureReply) {}
+}
+
+message AddCaptureRequest {
+    // x-position on the captured image
+    float captureX = 1;
+    // y-position on the captured image
+    float captureY = 2;
+    string time = 3;
+    string objectUuid = 4;
+    string cameraUuid = 5;
+}
+
+message AddCaptureReply {
+}
