@@ -42,6 +42,7 @@ message GetObjectReply {
 
 message ObjectInfo {
     string uuid = 1;
+    string name = 4;
     string note = 2;
     ObjectLocation lastLocation = 3;
 }
