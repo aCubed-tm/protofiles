@@ -4,7 +4,12 @@ package proto;
 
 service TrackingService {
     // Adds a capture from a camera to the database, without calculating 3d coordinates
-    rpc AddCapture (AddCaptureRequest) returns (AddCaptureReply) {}
+    rpc AddCapture (AddCaptureRequest) returns (AddCaptureReply) {
+    }
+    rpc GetAllObjects (GetAllObjectsRequest) returns (GetAllObjectsReply) {
+    }
+    rpc GetObject (GetObjectRequest) returns (GetObjectReply) {
+    }
 }
 
 message AddCaptureRequest {
@@ -12,10 +17,38 @@ message AddCaptureRequest {
     float captureX = 1;
     // y-position on the captured image
     float captureY = 2;
-    string time = 3;
+    int32 time = 3;
     string objectUuid = 4;
     string cameraUuid = 5;
 }
 
 message AddCaptureReply {
+}
+
+message GetAllObjectsRequest {
+}
+
+message GetAllObjectsReply {
+    repeated ObjectInfo objects = 1;
+}
+
+message GetObjectRequest {
+    string uuid = 1;
+}
+
+message GetObjectReply {
+    repeated ObjectLocation locations = 1;
+}
+
+message ObjectInfo {
+    string uuid = 1;
+    string note = 2;
+    ObjectLocation lastLocation = 3;
+}
+
+message ObjectLocation {
+    float x = 1;
+    float y = 2;
+    float z = 3;
+    int32 time = 4;
 }
