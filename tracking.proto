@@ -46,9 +46,9 @@ message ObjectInfo {
 }
 
 message ObjectLocation {
-    float x = 1;
-    float y = 2;
-    float z = 3;
+    double x = 1;
+    double y = 2;
+    double z = 3;
     int64 time = 4;
 }
 
