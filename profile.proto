@@ -82,4 +82,5 @@ message GetEmailsReply {
 message UserEmail {
     string email = 1;
     bool isPrimary = 2;
+    string uuid = 3;
 }
