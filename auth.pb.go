@@ -422,6 +422,84 @@ func (m *ActivateEmailReply) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_ActivateEmailReply proto.InternalMessageInfo
 
+type GetUuidFromTokenRequest struct {
+	Token                string   `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetUuidFromTokenRequest) Reset()         { *m = GetUuidFromTokenRequest{} }
+func (m *GetUuidFromTokenRequest) String() string { return proto.CompactTextString(m) }
+func (*GetUuidFromTokenRequest) ProtoMessage()    {}
+func (*GetUuidFromTokenRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_8bbd6f3875b0e874, []int{10}
+}
+
+func (m *GetUuidFromTokenRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetUuidFromTokenRequest.Unmarshal(m, b)
+}
+func (m *GetUuidFromTokenRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetUuidFromTokenRequest.Marshal(b, m, deterministic)
+}
+func (m *GetUuidFromTokenRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetUuidFromTokenRequest.Merge(m, src)
+}
+func (m *GetUuidFromTokenRequest) XXX_Size() int {
+	return xxx_messageInfo_GetUuidFromTokenRequest.Size(m)
+}
+func (m *GetUuidFromTokenRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetUuidFromTokenRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetUuidFromTokenRequest proto.InternalMessageInfo
+
+func (m *GetUuidFromTokenRequest) GetToken() string {
+	if m != nil {
+		return m.Token
+	}
+	return ""
+}
+
+type GetUuidFromTokenReply struct {
+	Uuid                 string   `protobuf:"bytes,1,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetUuidFromTokenReply) Reset()         { *m = GetUuidFromTokenReply{} }
+func (m *GetUuidFromTokenReply) String() string { return proto.CompactTextString(m) }
+func (*GetUuidFromTokenReply) ProtoMessage()    {}
+func (*GetUuidFromTokenReply) Descriptor() ([]byte, []int) {
+	return fileDescriptor_8bbd6f3875b0e874, []int{11}
+}
+
+func (m *GetUuidFromTokenReply) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetUuidFromTokenReply.Unmarshal(m, b)
+}
+func (m *GetUuidFromTokenReply) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetUuidFromTokenReply.Marshal(b, m, deterministic)
+}
+func (m *GetUuidFromTokenReply) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetUuidFromTokenReply.Merge(m, src)
+}
+func (m *GetUuidFromTokenReply) XXX_Size() int {
+	return xxx_messageInfo_GetUuidFromTokenReply.Size(m)
+}
+func (m *GetUuidFromTokenReply) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetUuidFromTokenReply.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetUuidFromTokenReply proto.InternalMessageInfo
+
+func (m *GetUuidFromTokenReply) GetUuid() string {
+	if m != nil {
+		return m.Uuid
+	}
+	return ""
+}
+
 type DropSingleTokenRequest struct {
 	Token                string   `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -433,7 +511,7 @@ func (m *DropSingleTokenRequest) Reset()         { *m = DropSingleTokenRequest{}
 func (m *DropSingleTokenRequest) String() string { return proto.CompactTextString(m) }
 func (*DropSingleTokenRequest) ProtoMessage()    {}
 func (*DropSingleTokenRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_8bbd6f3875b0e874, []int{10}
+	return fileDescriptor_8bbd6f3875b0e874, []int{12}
 }
 
 func (m *DropSingleTokenRequest) XXX_Unmarshal(b []byte) error {
@@ -471,7 +549,7 @@ func (m *DropSingleTokenReply) Reset()         { *m = DropSingleTokenReply{} }
 func (m *DropSingleTokenReply) String() string { return proto.CompactTextString(m) }
 func (*DropSingleTokenReply) ProtoMessage()    {}
 func (*DropSingleTokenReply) Descriptor() ([]byte, []int) {
-	return fileDescriptor_8bbd6f3875b0e874, []int{11}
+	return fileDescriptor_8bbd6f3875b0e874, []int{13}
 }
 
 func (m *DropSingleTokenReply) XXX_Unmarshal(b []byte) error {
@@ -504,7 +582,7 @@ func (m *DropAllTokensRequest) Reset()         { *m = DropAllTokensRequest{} }
 func (m *DropAllTokensRequest) String() string { return proto.CompactTextString(m) }
 func (*DropAllTokensRequest) ProtoMessage()    {}
 func (*DropAllTokensRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_8bbd6f3875b0e874, []int{12}
+	return fileDescriptor_8bbd6f3875b0e874, []int{14}
 }
 
 func (m *DropAllTokensRequest) XXX_Unmarshal(b []byte) error {
@@ -542,7 +620,7 @@ func (m *DropAllTokensReply) Reset()         { *m = DropAllTokensReply{} }
 func (m *DropAllTokensReply) String() string { return proto.CompactTextString(m) }
 func (*DropAllTokensReply) ProtoMessage()    {}
 func (*DropAllTokensReply) Descriptor() ([]byte, []int) {
-	return fileDescriptor_8bbd6f3875b0e874, []int{13}
+	return fileDescriptor_8bbd6f3875b0e874, []int{15}
 }
 
 func (m *DropAllTokensReply) XXX_Unmarshal(b []byte) error {
@@ -563,6 +641,242 @@ func (m *DropAllTokensReply) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_DropAllTokensReply proto.InternalMessageInfo
 
+type MakeEmailPrimaryRequest struct {
+	EmailUuid            string   `protobuf:"bytes,1,opt,name=emailUuid,proto3" json:"emailUuid,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *MakeEmailPrimaryRequest) Reset()         { *m = MakeEmailPrimaryRequest{} }
+func (m *MakeEmailPrimaryRequest) String() string { return proto.CompactTextString(m) }
+func (*MakeEmailPrimaryRequest) ProtoMessage()    {}
+func (*MakeEmailPrimaryRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_8bbd6f3875b0e874, []int{16}
+}
+
+func (m *MakeEmailPrimaryRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_MakeEmailPrimaryRequest.Unmarshal(m, b)
+}
+func (m *MakeEmailPrimaryRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_MakeEmailPrimaryRequest.Marshal(b, m, deterministic)
+}
+func (m *MakeEmailPrimaryRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MakeEmailPrimaryRequest.Merge(m, src)
+}
+func (m *MakeEmailPrimaryRequest) XXX_Size() int {
+	return xxx_messageInfo_MakeEmailPrimaryRequest.Size(m)
+}
+func (m *MakeEmailPrimaryRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_MakeEmailPrimaryRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MakeEmailPrimaryRequest proto.InternalMessageInfo
+
+func (m *MakeEmailPrimaryRequest) GetEmailUuid() string {
+	if m != nil {
+		return m.EmailUuid
+	}
+	return ""
+}
+
+type MakeEmailPrimaryReply struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *MakeEmailPrimaryReply) Reset()         { *m = MakeEmailPrimaryReply{} }
+func (m *MakeEmailPrimaryReply) String() string { return proto.CompactTextString(m) }
+func (*MakeEmailPrimaryReply) ProtoMessage()    {}
+func (*MakeEmailPrimaryReply) Descriptor() ([]byte, []int) {
+	return fileDescriptor_8bbd6f3875b0e874, []int{17}
+}
+
+func (m *MakeEmailPrimaryReply) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_MakeEmailPrimaryReply.Unmarshal(m, b)
+}
+func (m *MakeEmailPrimaryReply) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_MakeEmailPrimaryReply.Marshal(b, m, deterministic)
+}
+func (m *MakeEmailPrimaryReply) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MakeEmailPrimaryReply.Merge(m, src)
+}
+func (m *MakeEmailPrimaryReply) XXX_Size() int {
+	return xxx_messageInfo_MakeEmailPrimaryReply.Size(m)
+}
+func (m *MakeEmailPrimaryReply) XXX_DiscardUnknown() {
+	xxx_messageInfo_MakeEmailPrimaryReply.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MakeEmailPrimaryReply proto.InternalMessageInfo
+
+type AddEmailRequest struct {
+	// uuid of the account
+	AccountUuid          string   `protobuf:"bytes,1,opt,name=accountUuid,proto3" json:"accountUuid,omitempty"`
+	Email                string   `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *AddEmailRequest) Reset()         { *m = AddEmailRequest{} }
+func (m *AddEmailRequest) String() string { return proto.CompactTextString(m) }
+func (*AddEmailRequest) ProtoMessage()    {}
+func (*AddEmailRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_8bbd6f3875b0e874, []int{18}
+}
+
+func (m *AddEmailRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_AddEmailRequest.Unmarshal(m, b)
+}
+func (m *AddEmailRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_AddEmailRequest.Marshal(b, m, deterministic)
+}
+func (m *AddEmailRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_AddEmailRequest.Merge(m, src)
+}
+func (m *AddEmailRequest) XXX_Size() int {
+	return xxx_messageInfo_AddEmailRequest.Size(m)
+}
+func (m *AddEmailRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_AddEmailRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_AddEmailRequest proto.InternalMessageInfo
+
+func (m *AddEmailRequest) GetAccountUuid() string {
+	if m != nil {
+		return m.AccountUuid
+	}
+	return ""
+}
+
+func (m *AddEmailRequest) GetEmail() string {
+	if m != nil {
+		return m.Email
+	}
+	return ""
+}
+
+type AddEmailReply struct {
+	EmailUuid            string   `protobuf:"bytes,1,opt,name=emailUuid,proto3" json:"emailUuid,omitempty"`
+	VerificationToken    string   `protobuf:"bytes,2,opt,name=verificationToken,proto3" json:"verificationToken,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *AddEmailReply) Reset()         { *m = AddEmailReply{} }
+func (m *AddEmailReply) String() string { return proto.CompactTextString(m) }
+func (*AddEmailReply) ProtoMessage()    {}
+func (*AddEmailReply) Descriptor() ([]byte, []int) {
+	return fileDescriptor_8bbd6f3875b0e874, []int{19}
+}
+
+func (m *AddEmailReply) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_AddEmailReply.Unmarshal(m, b)
+}
+func (m *AddEmailReply) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_AddEmailReply.Marshal(b, m, deterministic)
+}
+func (m *AddEmailReply) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_AddEmailReply.Merge(m, src)
+}
+func (m *AddEmailReply) XXX_Size() int {
+	return xxx_messageInfo_AddEmailReply.Size(m)
+}
+func (m *AddEmailReply) XXX_DiscardUnknown() {
+	xxx_messageInfo_AddEmailReply.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_AddEmailReply proto.InternalMessageInfo
+
+func (m *AddEmailReply) GetEmailUuid() string {
+	if m != nil {
+		return m.EmailUuid
+	}
+	return ""
+}
+
+func (m *AddEmailReply) GetVerificationToken() string {
+	if m != nil {
+		return m.VerificationToken
+	}
+	return ""
+}
+
+type DeleteEmailRequest struct {
+	// uuid of the email to delete. should not be a primary email
+	Uuid                 string   `protobuf:"bytes,1,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *DeleteEmailRequest) Reset()         { *m = DeleteEmailRequest{} }
+func (m *DeleteEmailRequest) String() string { return proto.CompactTextString(m) }
+func (*DeleteEmailRequest) ProtoMessage()    {}
+func (*DeleteEmailRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_8bbd6f3875b0e874, []int{20}
+}
+
+func (m *DeleteEmailRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_DeleteEmailRequest.Unmarshal(m, b)
+}
+func (m *DeleteEmailRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_DeleteEmailRequest.Marshal(b, m, deterministic)
+}
+func (m *DeleteEmailRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DeleteEmailRequest.Merge(m, src)
+}
+func (m *DeleteEmailRequest) XXX_Size() int {
+	return xxx_messageInfo_DeleteEmailRequest.Size(m)
+}
+func (m *DeleteEmailRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_DeleteEmailRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_DeleteEmailRequest proto.InternalMessageInfo
+
+func (m *DeleteEmailRequest) GetUuid() string {
+	if m != nil {
+		return m.Uuid
+	}
+	return ""
+}
+
+type DeleteEmailReply struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *DeleteEmailReply) Reset()         { *m = DeleteEmailReply{} }
+func (m *DeleteEmailReply) String() string { return proto.CompactTextString(m) }
+func (*DeleteEmailReply) ProtoMessage()    {}
+func (*DeleteEmailReply) Descriptor() ([]byte, []int) {
+	return fileDescriptor_8bbd6f3875b0e874, []int{21}
+}
+
+func (m *DeleteEmailReply) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_DeleteEmailReply.Unmarshal(m, b)
+}
+func (m *DeleteEmailReply) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_DeleteEmailReply.Marshal(b, m, deterministic)
+}
+func (m *DeleteEmailReply) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DeleteEmailReply.Merge(m, src)
+}
+func (m *DeleteEmailReply) XXX_Size() int {
+	return xxx_messageInfo_DeleteEmailReply.Size(m)
+}
+func (m *DeleteEmailReply) XXX_DiscardUnknown() {
+	xxx_messageInfo_DeleteEmailReply.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_DeleteEmailReply proto.InternalMessageInfo
+
 func init() {
 	proto.RegisterType((*IsEmailRegisteredRequest)(nil), "proto.IsEmailRegisteredRequest")
 	proto.RegisterType((*IsEmailRegisteredReply)(nil), "proto.IsEmailRegisteredReply")
@@ -574,43 +888,63 @@ func init() {
 	proto.RegisterType((*LoginReply)(nil), "proto.LoginReply")
 	proto.RegisterType((*ActivateEmailRequest)(nil), "proto.ActivateEmailRequest")
 	proto.RegisterType((*ActivateEmailReply)(nil), "proto.ActivateEmailReply")
+	proto.RegisterType((*GetUuidFromTokenRequest)(nil), "proto.GetUuidFromTokenRequest")
+	proto.RegisterType((*GetUuidFromTokenReply)(nil), "proto.GetUuidFromTokenReply")
 	proto.RegisterType((*DropSingleTokenRequest)(nil), "proto.DropSingleTokenRequest")
 	proto.RegisterType((*DropSingleTokenReply)(nil), "proto.DropSingleTokenReply")
 	proto.RegisterType((*DropAllTokensRequest)(nil), "proto.DropAllTokensRequest")
 	proto.RegisterType((*DropAllTokensReply)(nil), "proto.DropAllTokensReply")
+	proto.RegisterType((*MakeEmailPrimaryRequest)(nil), "proto.MakeEmailPrimaryRequest")
+	proto.RegisterType((*MakeEmailPrimaryReply)(nil), "proto.MakeEmailPrimaryReply")
+	proto.RegisterType((*AddEmailRequest)(nil), "proto.AddEmailRequest")
+	proto.RegisterType((*AddEmailReply)(nil), "proto.AddEmailReply")
+	proto.RegisterType((*DeleteEmailRequest)(nil), "proto.DeleteEmailRequest")
+	proto.RegisterType((*DeleteEmailReply)(nil), "proto.DeleteEmailReply")
 }
 
 func init() { proto.RegisterFile("auth.proto", fileDescriptor_8bbd6f3875b0e874) }
 
 var fileDescriptor_8bbd6f3875b0e874 = []byte{
-	// 432 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x52, 0x4d, 0xab, 0x9b, 0x40,
-	0x14, 0x8d, 0x6d, 0x2d, 0xc9, 0x4d, 0x42, 0xc8, 0x54, 0xc4, 0x1a, 0x4a, 0xc3, 0xac, 0xb2, 0x08,
-	0xa1, 0x1f, 0xbb, 0xae, 0x9a, 0x7e, 0x12, 0x28, 0x14, 0x4c, 0xb3, 0x2d, 0x58, 0x33, 0x98, 0xa1,
-	0xd6, 0xb1, 0xce, 0x98, 0x87, 0xef, 0x5f, 0xbc, 0x7f, 0xfc, 0x18, 0x47, 0x8d, 0x9f, 0x79, 0xf0,
-	0x56, 0x32, 0xe7, 0x9e, 0x7b, 0xee, 0xb9, 0xde, 0x03, 0xe0, 0x26, 0xe2, 0xb4, 0x89, 0x62, 0x26,
-	0x18, 0xd2, 0xb3, 0x0f, 0x7e, 0x03, 0xd6, 0x8e, 0x7f, 0xfd, 0xe7, 0xd2, 0xc0, 0x21, 0x3e, 0xe5,
-	0x82, 0xc4, 0xe4, 0xe8, 0x90, 0xff, 0x09, 0xe1, 0x02, 0x19, 0xa0, 0x13, 0x59, 0xb1, 0xb4, 0xa5,
-	0xb6, 0x1a, 0x39, 0xea, 0x81, 0x7f, 0x83, 0xd9, 0xd1, 0x11, 0x05, 0x29, 0xc2, 0x30, 0xa1, 0xfc,
-	0x02, 0x66, 0x6d, 0x43, 0xa7, 0x86, 0xa1, 0x25, 0x8c, 0x5d, 0xcf, 0x63, 0x49, 0x28, 0x0e, 0x09,
-	0x3d, 0x5a, 0x4f, 0x32, 0xe5, 0x2a, 0x24, 0x1d, 0x7d, 0x27, 0x62, 0x17, 0x9e, 0xa9, 0x20, 0xfc,
-	0x53, 0x9a, 0x4f, 0xba, 0xe6, 0xe8, 0x1b, 0x98, 0x1d, 0x1d, 0xd2, 0xd1, 0x1a, 0xe6, 0x2c, 0xf6,
-	0xdd, 0x90, 0xde, 0xba, 0x82, 0xb2, 0x50, 0xea, 0x73, 0x4b, 0x5b, 0x3e, 0x5d, 0x8d, 0x9c, 0x76,
-	0x01, 0x7f, 0x86, 0x59, 0xe1, 0xf4, 0xea, 0x40, 0x64, 0xc3, 0x30, 0x72, 0x39, 0xbf, 0x61, 0x71,
-	0xb1, 0x41, 0xf9, 0xc6, 0x33, 0x98, 0x5e, 0x44, 0xa2, 0x20, 0xc5, 0x1f, 0x61, 0xf2, 0x83, 0xf9,
-	0x34, 0x7c, 0xbc, 0x24, 0x06, 0xc8, 0x15, 0xe4, 0x4e, 0x06, 0xe8, 0x82, 0xfd, 0x25, 0x61, 0x4e,
-	0x53, 0x0f, 0xbc, 0x06, 0x63, 0xeb, 0x09, 0x7a, 0x76, 0x05, 0x69, 0xfe, 0x31, 0xc5, 0xd6, 0xaa,
-	0x6c, 0x03, 0x50, 0x83, 0x2d, 0x9d, 0x6e, 0xc0, 0xfc, 0x12, 0xb3, 0x68, 0x4f, 0x43, 0x3f, 0x20,
-	0xbf, 0x24, 0xf1, 0xba, 0x8a, 0x09, 0x46, 0x8b, 0x2f, 0x75, 0xd6, 0x0a, 0xdf, 0x06, 0x41, 0x06,
-	0xf2, 0x07, 0xbd, 0x34, 0xd8, 0x51, 0x90, 0xbe, 0xbb, 0x7b, 0x06, 0xe3, 0x6d, 0x22, 0x4e, 0x7b,
-	0x12, 0x9f, 0xa9, 0x47, 0xd0, 0x01, 0xe6, 0xad, 0xd4, 0xa1, 0xd7, 0x2a, 0xcb, 0x9b, 0xbe, 0x04,
-	0xdb, 0xaf, 0xfa, 0x09, 0xd2, 0xe8, 0x40, 0xca, 0xb6, 0xa2, 0x53, 0xca, 0xf6, 0xc5, 0xb0, 0x94,
-	0xed, 0x4e, 0x1d, 0x1e, 0xa0, 0x0f, 0x30, 0x2c, 0x66, 0x21, 0x33, 0x27, 0x37, 0xa2, 0x65, 0x1b,
-	0x2d, 0x5c, 0xf5, 0xbe, 0x05, 0x3d, 0xbb, 0x36, 0x7a, 0x91, 0x13, 0xaa, 0xe9, 0xb1, 0xe7, 0x75,
-	0x50, 0xb5, 0xec, 0x60, 0x5a, 0x3b, 0x27, 0x5a, 0xe4, 0xac, 0xae, 0x48, 0xd8, 0x2f, 0xbb, 0x8b,
-	0x4a, 0xea, 0x27, 0xcc, 0x1a, 0x37, 0x45, 0xc5, 0xb6, 0xdd, 0xd9, 0xb0, 0x17, 0x7d, 0xe5, 0xd2,
-	0x5b, 0xed, 0xbc, 0xa8, 0xca, 0x6f, 0x46, 0xa4, 0xf4, 0xd6, 0x4e, 0x04, 0x1e, 0xfc, 0x79, 0x9e,
-	0xd5, 0xde, 0xdf, 0x07, 0x00, 0x00, 0xff, 0xff, 0x25, 0x43, 0x92, 0x74, 0xc7, 0x04, 0x00, 0x00,
+	// 615 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x54, 0x5d, 0x6f, 0x12, 0x41,
+	0x14, 0x85, 0x2a, 0x0d, 0x5c, 0x4a, 0x28, 0xe3, 0x16, 0x70, 0x5b, 0x95, 0xcc, 0x13, 0x89, 0x04,
+	0xbf, 0x1e, 0x4c, 0x7c, 0x12, 0x5b, 0xdb, 0x90, 0x68, 0x34, 0xdb, 0xf2, 0x64, 0x62, 0xb2, 0xc2,
+	0x48, 0x27, 0x5d, 0x76, 0xd7, 0xdd, 0x59, 0x0c, 0xfe, 0x34, 0x7f, 0x9d, 0x99, 0x99, 0xfd, 0x9c,
+	0x9d, 0x45, 0xe3, 0x13, 0xec, 0xbd, 0xe7, 0x9e, 0xb9, 0x67, 0xee, 0x3d, 0x03, 0x60, 0x47, 0xec,
+	0x76, 0xea, 0x07, 0x1e, 0xf3, 0x50, 0x43, 0xfc, 0xe0, 0xe7, 0x30, 0x9c, 0x87, 0xef, 0x37, 0x36,
+	0x75, 0x2c, 0xb2, 0xa6, 0x21, 0x23, 0x01, 0x59, 0x59, 0xe4, 0x47, 0x44, 0x42, 0x86, 0x0c, 0x68,
+	0x10, 0x9e, 0x19, 0xd6, 0x47, 0xf5, 0x71, 0xcb, 0x92, 0x1f, 0xf8, 0x2b, 0xf4, 0x35, 0x15, 0xbe,
+	0xb3, 0x43, 0x18, 0x8e, 0x68, 0x98, 0x05, 0x45, 0x59, 0xd3, 0x2a, 0xc4, 0xd0, 0x08, 0xda, 0xf6,
+	0x72, 0xe9, 0x45, 0x2e, 0x5b, 0x44, 0x74, 0x35, 0x3c, 0x10, 0xcc, 0xf9, 0x10, 0xef, 0xe8, 0x8a,
+	0xb0, 0xb9, 0xbb, 0xa5, 0x8c, 0x84, 0xef, 0x76, 0xf1, 0x49, 0xfb, 0x3a, 0xba, 0x84, 0xbe, 0xa6,
+	0x82, 0x77, 0x34, 0x81, 0x9e, 0x17, 0xac, 0x6d, 0x97, 0xfe, 0xb2, 0x19, 0xf5, 0x5c, 0xce, 0x1f,
+	0x0e, 0xeb, 0xa3, 0x7b, 0xe3, 0x96, 0x55, 0x4e, 0xe0, 0x73, 0xe8, 0x26, 0x9d, 0xee, 0x3d, 0x10,
+	0x99, 0xd0, 0xf4, 0xed, 0x30, 0xfc, 0xe9, 0x05, 0x89, 0x82, 0xf4, 0x1b, 0x77, 0xa1, 0x93, 0x91,
+	0xf8, 0xce, 0x0e, 0xbf, 0x85, 0xa3, 0x0f, 0xde, 0x9a, 0xba, 0xff, 0x4f, 0x89, 0x01, 0x62, 0x06,
+	0xae, 0xc9, 0x80, 0x06, 0xf3, 0xee, 0x88, 0x1b, 0xc3, 0xe4, 0x07, 0x9e, 0x80, 0x31, 0x5b, 0x32,
+	0xba, 0xb5, 0x19, 0x51, 0x6f, 0x4c, 0xa2, 0xeb, 0x79, 0xb4, 0x01, 0x48, 0x41, 0xf3, 0x4e, 0x9f,
+	0xc1, 0xe0, 0x8a, 0x88, 0x21, 0x5c, 0x06, 0xde, 0xe6, 0x86, 0x23, 0xf7, 0xd3, 0x3c, 0x85, 0x93,
+	0x72, 0x01, 0xef, 0x11, 0xc1, 0xfd, 0x88, 0x8f, 0x57, 0xa2, 0xc5, 0x7f, 0x3c, 0x85, 0xfe, 0x45,
+	0xe0, 0xf9, 0xd7, 0xd4, 0x5d, 0x3b, 0xe4, 0x1f, 0xc8, 0xfb, 0x60, 0x94, 0xf0, 0xbc, 0xcb, 0x89,
+	0x8c, 0xcf, 0x1c, 0x47, 0x04, 0xc3, 0xbf, 0x2a, 0x55, 0xd0, 0x9c, 0xe3, 0x35, 0x0c, 0x3e, 0xda,
+	0x77, 0x52, 0xfb, 0xe7, 0x80, 0x6e, 0xec, 0x60, 0x97, 0xd0, 0x9c, 0x41, 0x4b, 0x4c, 0x64, 0x91,
+	0xf5, 0x9f, 0x05, 0xf0, 0x00, 0x4e, 0xca, 0x85, 0x9c, 0x71, 0x0e, 0xdd, 0xd9, 0x6a, 0x55, 0xb8,
+	0x7a, 0x65, 0xd5, 0xeb, 0xa5, 0x55, 0xcf, 0x56, 0xe1, 0x20, 0xbf, 0xce, 0x5f, 0xa0, 0x93, 0x51,
+	0xf1, 0xdb, 0xdc, 0xdb, 0x12, 0xdf, 0xf1, 0x2d, 0x09, 0xe8, 0x77, 0xba, 0x14, 0xab, 0x7c, 0x93,
+	0xdb, 0x8d, 0x72, 0x02, 0x8f, 0x01, 0x5d, 0x10, 0x87, 0x28, 0x5b, 0xa2, 0x9b, 0x17, 0x82, 0xe3,
+	0x02, 0xd2, 0x77, 0x76, 0x2f, 0x7f, 0x1f, 0x42, 0x7b, 0x16, 0xb1, 0xdb, 0x6b, 0x12, 0x6c, 0xe9,
+	0x92, 0xa0, 0x05, 0xf4, 0x4a, 0x6f, 0x01, 0x7a, 0x22, 0x5f, 0x98, 0x69, 0xd5, 0xbb, 0x62, 0x3e,
+	0xaa, 0x06, 0xf0, 0xab, 0xac, 0x71, 0xda, 0x92, 0xa1, 0x53, 0xda, 0xaa, 0xc7, 0x21, 0xa5, 0xd5,
+	0xbf, 0x05, 0xb8, 0x86, 0xde, 0x40, 0x33, 0x39, 0x0b, 0xf5, 0x63, 0xb0, 0x62, 0x78, 0xd3, 0x28,
+	0xc5, 0x65, 0xed, 0x0b, 0x68, 0x08, 0x0f, 0xa2, 0x07, 0x31, 0x20, 0xef, 0x69, 0xb3, 0x57, 0x0c,
+	0xca, 0x92, 0x39, 0x74, 0x0a, 0x26, 0x43, 0xa7, 0x31, 0x4a, 0x67, 0x54, 0xf3, 0xa1, 0x3e, 0x29,
+	0xa9, 0x2c, 0x38, 0x56, 0x8d, 0x86, 0x1e, 0x67, 0x72, 0x75, 0x96, 0x35, 0xcf, 0x2a, 0xf3, 0x92,
+	0xf3, 0x13, 0x74, 0x15, 0x7f, 0xa1, 0xe4, 0x06, 0xf5, 0x3e, 0x35, 0x4f, 0xab, 0xd2, 0xa9, 0xde,
+	0x82, 0xd5, 0x50, 0x1e, 0xaf, 0xda, 0x35, 0xd5, 0xab, 0x71, 0xa7, 0xd0, 0xab, 0xda, 0x2c, 0xd5,
+	0x5b, 0x61, 0xdc, 0x54, 0xaf, 0xde, 0x9f, 0x62, 0xfa, 0x89, 0xad, 0xd2, 0xe9, 0x2b, 0x96, 0x4d,
+	0xa7, 0x5f, 0xf0, 0x1f, 0xae, 0xa1, 0x73, 0x68, 0xe7, 0xbc, 0x80, 0xd2, 0xde, 0x4b, 0x4e, 0x32,
+	0x07, 0xba, 0x94, 0x20, 0xf9, 0x76, 0x28, 0x32, 0xaf, 0xfe, 0x04, 0x00, 0x00, 0xff, 0xff, 0xf3,
+	0xff, 0x2a, 0xdd, 0x86, 0x07, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -631,9 +965,15 @@ type AuthServiceClient interface {
 	Register(ctx context.Context, in *RegisterRequest, opts ...grpc.CallOption) (*RegisterReply, error)
 	Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginReply, error)
 	ActivateEmail(ctx context.Context, in *ActivateEmailRequest, opts ...grpc.CallOption) (*ActivateEmailReply, error)
-	// TODO: check token valid
+	GetUuidFromToken(ctx context.Context, in *GetUuidFromTokenRequest, opts ...grpc.CallOption) (*GetUuidFromTokenReply, error)
 	DropSingleToken(ctx context.Context, in *DropSingleTokenRequest, opts ...grpc.CallOption) (*DropSingleTokenReply, error)
 	DropAllTokens(ctx context.Context, in *DropAllTokensRequest, opts ...grpc.CallOption) (*DropAllTokensReply, error)
+	// sets an email to primary and sets all others to non-primary
+	MakeEmailPrimary(ctx context.Context, in *MakeEmailPrimaryRequest, opts ...grpc.CallOption) (*MakeEmailPrimaryReply, error)
+	// adds an email that will be set to non-primary
+	AddEmail(ctx context.Context, in *AddEmailRequest, opts ...grpc.CallOption) (*AddEmailReply, error)
+	// deletes an email if it is non-primary
+	DeleteEmail(ctx context.Context, in *DeleteEmailRequest, opts ...grpc.CallOption) (*DeleteEmailReply, error)
 }
 
 type authServiceClient struct {
@@ -689,6 +1029,15 @@ func (c *authServiceClient) ActivateEmail(ctx context.Context, in *ActivateEmail
 	return out, nil
 }
 
+func (c *authServiceClient) GetUuidFromToken(ctx context.Context, in *GetUuidFromTokenRequest, opts ...grpc.CallOption) (*GetUuidFromTokenReply, error) {
+	out := new(GetUuidFromTokenReply)
+	err := c.cc.Invoke(ctx, "/proto.AuthService/GetUuidFromToken", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *authServiceClient) DropSingleToken(ctx context.Context, in *DropSingleTokenRequest, opts ...grpc.CallOption) (*DropSingleTokenReply, error) {
 	out := new(DropSingleTokenReply)
 	err := c.cc.Invoke(ctx, "/proto.AuthService/DropSingleToken", in, out, opts...)
@@ -707,6 +1056,33 @@ func (c *authServiceClient) DropAllTokens(ctx context.Context, in *DropAllTokens
 	return out, nil
 }
 
+func (c *authServiceClient) MakeEmailPrimary(ctx context.Context, in *MakeEmailPrimaryRequest, opts ...grpc.CallOption) (*MakeEmailPrimaryReply, error) {
+	out := new(MakeEmailPrimaryReply)
+	err := c.cc.Invoke(ctx, "/proto.AuthService/MakeEmailPrimary", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authServiceClient) AddEmail(ctx context.Context, in *AddEmailRequest, opts ...grpc.CallOption) (*AddEmailReply, error) {
+	out := new(AddEmailReply)
+	err := c.cc.Invoke(ctx, "/proto.AuthService/AddEmail", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authServiceClient) DeleteEmail(ctx context.Context, in *DeleteEmailRequest, opts ...grpc.CallOption) (*DeleteEmailReply, error) {
+	out := new(DeleteEmailReply)
+	err := c.cc.Invoke(ctx, "/proto.AuthService/DeleteEmail", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AuthServiceServer is the server API for AuthService service.
 type AuthServiceServer interface {
 	IsEmailRegistered(context.Context, *IsEmailRegisteredRequest) (*IsEmailRegisteredReply, error)
@@ -715,9 +1091,15 @@ type AuthServiceServer interface {
 	Register(context.Context, *RegisterRequest) (*RegisterReply, error)
 	Login(context.Context, *LoginRequest) (*LoginReply, error)
 	ActivateEmail(context.Context, *ActivateEmailRequest) (*ActivateEmailReply, error)
-	// TODO: check token valid
+	GetUuidFromToken(context.Context, *GetUuidFromTokenRequest) (*GetUuidFromTokenReply, error)
 	DropSingleToken(context.Context, *DropSingleTokenRequest) (*DropSingleTokenReply, error)
 	DropAllTokens(context.Context, *DropAllTokensRequest) (*DropAllTokensReply, error)
+	// sets an email to primary and sets all others to non-primary
+	MakeEmailPrimary(context.Context, *MakeEmailPrimaryRequest) (*MakeEmailPrimaryReply, error)
+	// adds an email that will be set to non-primary
+	AddEmail(context.Context, *AddEmailRequest) (*AddEmailReply, error)
+	// deletes an email if it is non-primary
+	DeleteEmail(context.Context, *DeleteEmailRequest) (*DeleteEmailReply, error)
 }
 
 // UnimplementedAuthServiceServer can be embedded to have forward compatible implementations.
@@ -739,11 +1121,23 @@ func (*UnimplementedAuthServiceServer) Login(ctx context.Context, req *LoginRequ
 func (*UnimplementedAuthServiceServer) ActivateEmail(ctx context.Context, req *ActivateEmailRequest) (*ActivateEmailReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ActivateEmail not implemented")
 }
+func (*UnimplementedAuthServiceServer) GetUuidFromToken(ctx context.Context, req *GetUuidFromTokenRequest) (*GetUuidFromTokenReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUuidFromToken not implemented")
+}
 func (*UnimplementedAuthServiceServer) DropSingleToken(ctx context.Context, req *DropSingleTokenRequest) (*DropSingleTokenReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DropSingleToken not implemented")
 }
 func (*UnimplementedAuthServiceServer) DropAllTokens(ctx context.Context, req *DropAllTokensRequest) (*DropAllTokensReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DropAllTokens not implemented")
+}
+func (*UnimplementedAuthServiceServer) MakeEmailPrimary(ctx context.Context, req *MakeEmailPrimaryRequest) (*MakeEmailPrimaryReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method MakeEmailPrimary not implemented")
+}
+func (*UnimplementedAuthServiceServer) AddEmail(ctx context.Context, req *AddEmailRequest) (*AddEmailReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AddEmail not implemented")
+}
+func (*UnimplementedAuthServiceServer) DeleteEmail(ctx context.Context, req *DeleteEmailRequest) (*DeleteEmailReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteEmail not implemented")
 }
 
 func RegisterAuthServiceServer(s *grpc.Server, srv AuthServiceServer) {
@@ -840,6 +1234,24 @@ func _AuthService_ActivateEmail_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AuthService_GetUuidFromToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUuidFromTokenRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthServiceServer).GetUuidFromToken(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.AuthService/GetUuidFromToken",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthServiceServer).GetUuidFromToken(ctx, req.(*GetUuidFromTokenRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _AuthService_DropSingleToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DropSingleTokenRequest)
 	if err := dec(in); err != nil {
@@ -876,6 +1288,60 @@ func _AuthService_DropAllTokens_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AuthService_MakeEmailPrimary_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MakeEmailPrimaryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthServiceServer).MakeEmailPrimary(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.AuthService/MakeEmailPrimary",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthServiceServer).MakeEmailPrimary(ctx, req.(*MakeEmailPrimaryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AuthService_AddEmail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AddEmailRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthServiceServer).AddEmail(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.AuthService/AddEmail",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthServiceServer).AddEmail(ctx, req.(*AddEmailRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AuthService_DeleteEmail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteEmailRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthServiceServer).DeleteEmail(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.AuthService/DeleteEmail",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthServiceServer).DeleteEmail(ctx, req.(*DeleteEmailRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _AuthService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "proto.AuthService",
 	HandlerType: (*AuthServiceServer)(nil),
@@ -901,12 +1367,28 @@ var _AuthService_serviceDesc = grpc.ServiceDesc{
 			Handler:    _AuthService_ActivateEmail_Handler,
 		},
 		{
+			MethodName: "GetUuidFromToken",
+			Handler:    _AuthService_GetUuidFromToken_Handler,
+		},
+		{
 			MethodName: "DropSingleToken",
 			Handler:    _AuthService_DropSingleToken_Handler,
 		},
 		{
 			MethodName: "DropAllTokens",
 			Handler:    _AuthService_DropAllTokens_Handler,
+		},
+		{
+			MethodName: "MakeEmailPrimary",
+			Handler:    _AuthService_MakeEmailPrimary_Handler,
+		},
+		{
+			MethodName: "AddEmail",
+			Handler:    _AuthService_AddEmail_Handler,
+		},
+		{
+			MethodName: "DeleteEmail",
+			Handler:    _AuthService_DeleteEmail_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

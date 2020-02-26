@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+package proto;
+
+service TrackingService {
+    // Adds a capture from a camera to the database, without calculating 3d coordinates
+    rpc AddCapture (AddCaptureRequest) returns (AddCaptureReply) {}
+    rpc GetAllObjects (GetAllObjectsRequest) returns (GetAllObjectsReply) {}
+    rpc GetObject (GetObjectRequest) returns (GetObjectReply) {}
+    rpc UpdatePositions (UpdatePositionsRequest) returns (UpdatePositionsReply) {}
+}
+
+message AddCaptureRequest {
+    // x-position on the captured image
+    float captureX = 1;
+    // y-position on the captured image
+    float captureY = 2;
+    int64 time = 3;
+    string objectUuid = 4;
+    string cameraUuid = 5;
+}
+
+message AddCaptureReply {
+}
+
+message GetAllObjectsRequest {
+}
+
+message GetAllObjectsReply {
+    repeated ObjectInfo objects = 1;
+}
+
+message GetObjectRequest {
+    string uuid = 1;
+}
+
+message GetObjectReply {
+    repeated ObjectLocation locations = 1;
+}
+
+message ObjectInfo {
+    string uuid = 1;
+    string name = 4;
+    string note = 2;
+    ObjectLocation lastLocation = 3;
+}
+
+message ObjectLocation {
+    double x = 1;
+    double y = 2;
+    double z = 3;
+    int64 time = 4;
+}
+
+message UpdatePositionsRequest {
+    // optional tracking object uuid. if this is empty, will update position for every object
+    string uuid = 1;
+}
+
+message UpdatePositionsReply {
+}
