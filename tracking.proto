@@ -15,7 +15,7 @@ message AddCaptureRequest {
     float captureX = 1;
     // y-position on the captured image
     float captureY = 2;
-    int32 time = 3;
+    int64 time = 3;
     string objectUuid = 4;
     string cameraUuid = 5;
 }
